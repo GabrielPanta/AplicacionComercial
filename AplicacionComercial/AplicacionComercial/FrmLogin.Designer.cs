@@ -63,13 +63,16 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(173, 20);
             this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.Text = "akuma";
             // 
             // txtContraseña
             // 
             this.txtContraseña.Location = new System.Drawing.Point(80, 38);
             this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(173, 20);
             this.txtContraseña.TabIndex = 3;
+            this.txtContraseña.Text = "123";
             // 
             // btnAceptar
             // 
@@ -97,8 +100,10 @@
             // 
             // FrmLogin
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(284, 108);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);

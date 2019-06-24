@@ -35,7 +35,9 @@ namespace AplicacionComercial
             }
             else
             {
-                MessageBox.Show("Ok Fuck yeah");
+                FrmPrincipal miform = new FrmPrincipal();
+                miform.Show();
+                this.Hide();
             }   
             
         }

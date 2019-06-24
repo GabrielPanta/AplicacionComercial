@@ -16,5 +16,17 @@ namespace CADAplicacionComercial
                 return true;
             }
         }
+
+        public static bool ExisteUsuarios(string IDUsuario)
+        {
+            if (adapter.ExisteUsuario(IDUsuario) == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }
