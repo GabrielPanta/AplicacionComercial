@@ -25,6 +25,7 @@ namespace AplicacionComercial
             this.Validate();
             this.usuarioBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.dSAplicacionComercial);
+            DeshabilitarCampos();
         }
 
         private bool ValidarDatos()
@@ -70,10 +71,10 @@ namespace AplicacionComercial
                     return false;
                 }
                 errorProvider1.Clear();
-
-                if (fechaModificacionClaveDateTimePicker.Value.ToString() == string.Empty)
+                if (claveTextBox.Text != ConfirmacionTextBox.Text)
                 {
-                    errorProvider1.SetError(claveTextBox, "Debe ingresar una Clave");
+                    errorProvider1.SetError(claveTextBox, "Clave y Confirmación no coinciden");
+                    errorProvider1.SetError(ConfirmacionTextBox, "Clave y Confirmación no coinciden");
                     claveTextBox.Focus();
                     return false;
                 }
@@ -114,7 +115,6 @@ namespace AplicacionComercial
             apellidosTextBox.ReadOnly = false;
             claveTextBox.ReadOnly = false;
             correoTextBox.ReadOnly = false;
-            fechaModificacionClaveDateTimePicker.Enabled=true;
             iDRolComboBox.Enabled = true;
             ConfirmacionTextBox.ReadOnly = false;
             
@@ -142,7 +142,6 @@ namespace AplicacionComercial
             apellidosTextBox.ReadOnly = true;
             claveTextBox.ReadOnly = true;
             correoTextBox.ReadOnly = true;
-            fechaModificacionClaveDateTimePicker.Enabled = false;
             iDRolComboBox.Enabled =false;
             ConfirmacionTextBox.ReadOnly =true;
         }
@@ -176,6 +175,10 @@ namespace AplicacionComercial
         {
             usuarioBindingSource.AddNew();
             HabilitarCampos();
+            fechaModificacionClaveDateTimePicker.Value = DateTime.Now;
+            nuevo = true;            
         }
+
+ 
     }
 }

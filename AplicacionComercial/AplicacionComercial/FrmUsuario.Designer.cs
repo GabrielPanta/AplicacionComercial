@@ -475,9 +475,10 @@
             // 
             this.fechaModificacionClaveDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.usuarioBindingSource, "FechaModificacionClave", true));
             this.fechaModificacionClaveDateTimePicker.Enabled = false;
+            this.fechaModificacionClaveDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fechaModificacionClaveDateTimePicker.Location = new System.Drawing.Point(382, 44);
             this.fechaModificacionClaveDateTimePicker.Name = "fechaModificacionClaveDateTimePicker";
-            this.fechaModificacionClaveDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.fechaModificacionClaveDateTimePicker.Size = new System.Drawing.Size(95, 20);
             this.fechaModificacionClaveDateTimePicker.TabIndex = 10;
             // 
             // correoTextBox

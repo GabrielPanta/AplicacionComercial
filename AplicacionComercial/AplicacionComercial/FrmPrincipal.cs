@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CADAplicacionComercial;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,10 @@ namespace AplicacionComercial
 {
     public partial class FrmPrincipal : Form
     {
+        private CADUsuario usuarioLogueado;
+
+        public CADUsuario UsuarioLogueado { get => usuarioLogueado; set => usuarioLogueado = value; }
+
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -27,6 +32,16 @@ namespace AplicacionComercial
         private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            UsuarioToolStripStatusLabel.Text = "Usuario: " + usuarioLogueado.Nombres + "" + usuarioLogueado.Apellidos;
         }
     }
 }

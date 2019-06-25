@@ -36,6 +36,7 @@ namespace AplicacionComercial
             else
             {
                 FrmPrincipal miform = new FrmPrincipal();
+                miform.UsuarioLogueado = CADUsuario.GetUsuario(txtUsuario.Text);
                 miform.Show();
                 this.Hide();
             }   
@@ -45,6 +46,11 @@ namespace AplicacionComercial
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
