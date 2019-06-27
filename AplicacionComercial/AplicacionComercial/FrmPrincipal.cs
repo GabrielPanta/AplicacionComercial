@@ -43,5 +43,19 @@ namespace AplicacionComercial
         {
             UsuarioToolStripStatusLabel.Text = "Usuario: " + usuarioLogueado.Nombres + "" + usuarioLogueado.Apellidos;
         }
+
+        private void ProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmProveedor miform = new FrmProveedor();
+            miform.Show();
+            miform.MdiParent = this;
+        }
+
+        private void ProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmProducto miform = new FrmProducto();
+            miform.Show();
+            miform.MdiParent = this;
+        }
     }
 }

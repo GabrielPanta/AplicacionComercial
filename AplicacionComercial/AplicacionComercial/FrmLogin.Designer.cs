@@ -63,7 +63,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(173, 20);
             this.txtUsuario.TabIndex = 2;
-            this.txtUsuario.Text = "akuma";
+            this.txtUsuario.Text = "Gabx";
             // 
             // txtContraseña
             // 
