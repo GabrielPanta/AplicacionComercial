@@ -68,6 +68,69 @@ namespace AplicacionComercial
             LlenarGrillas();
         }
 
+        private void EditarToolStripButton_Click_1(object sender, EventArgs e)
+        {
+            HabilitarCampos();
+        }
+
+        private void HabilitarCampos()
+        {
+            //bindingNavigatorMoveFirstItem.Enabled = false;
+            //bindingNavigatorMoveNextItem.Enabled = false;
+            //bindingNavigatorMoveLastItem.Enabled = false;
+            //bindingNavigatorMoveLastItem.Enabled = false;
+            EditarToolStripButton.Enabled = false;
+            NuevoToolStripButton.Enabled = false;
+            GuardarToolStripButton.Enabled = true;
+            CancelarToolStripButton.Enabled = true;
+            EliminarToolStripButton.Enabled = false;
+            BuscarToolStripButton.Enabled = false;
+
+            iDProductoTextBox.ReadOnly = false;
+            descripcionTextBox.ReadOnly = false;
+            iDDepartamentoComboBox.Enabled = true;
+            iDIVAComboBox.Enabled = true;
+            precioTextBox.ReadOnly = false;
+            imagenTextBox.ReadOnly = false;
+            iDMedidaComboBox.Enabled = true;
+            medidaTextBox.ReadOnly = false;
+            notasTextBox.ReadOnly = false;
+        }
+
+        private void CancelarToolStripButton_Click(object sender, EventArgs e)
+        {
+            DeshabilitarCampos();
+            productoBindingSource.CancelEdit();
+        }
+
+        private void DeshabilitarCampos()
+        {
+            //bindingNavigatorMoveFirstItem.Enabled = true;
+            //bindingNavigatorMoveNextItem.Enabled = true;
+            //bindingNavigatorMoveLastItem.Enabled = true;
+            //bindingNavigatorMoveLastItem.Enabled = true;
+            EditarToolStripButton.Enabled = true;
+            NuevoToolStripButton.Enabled = true;
+            GuardarToolStripButton.Enabled = false;
+            CancelarToolStripButton.Enabled = false;
+            EliminarToolStripButton.Enabled = true;
+            BuscarToolStripButton.Enabled = true;
+
+            iDProductoTextBox.ReadOnly = true;
+            descripcionTextBox.ReadOnly = true;
+            iDDepartamentoComboBox.Enabled = false;
+            iDIVAComboBox.Enabled = false;
+            precioTextBox.ReadOnly = true;
+            imagenTextBox.ReadOnly = true;
+            iDMedidaComboBox.Enabled = false;
+            medidaTextBox.ReadOnly = true;
+            notasTextBox.ReadOnly = true;
+        }
+
+        private void EditarToolStripButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

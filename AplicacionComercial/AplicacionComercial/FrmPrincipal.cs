@@ -56,6 +56,14 @@ namespace AplicacionComercial
             FrmProducto miform = new FrmProducto();
             miform.Show();
             miform.MdiParent = this;
+           
+        }
+
+        private void ProductosToolStripButton_Click(object sender, EventArgs e)
+        {
+            FrmProducto miform = new FrmProducto();
+            miform.Show();
+            miform.MdiParent = this;
         }
     }
 }

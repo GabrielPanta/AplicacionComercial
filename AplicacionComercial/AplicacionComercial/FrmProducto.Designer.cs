@@ -38,24 +38,17 @@
             System.Windows.Forms.Label iDMedidaLabel;
             System.Windows.Forms.Label medidaLabel;
             System.Windows.Forms.Label imagenLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProducto));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.productoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProducto));
             this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dSAplicacionComercial = new AplicacionComercial.DSAplicacionComercial();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.productoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.productoDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,27 +81,43 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BarrasGroupBox = new System.Windows.Forms.GroupBox();
             this.AgregarBarraButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.BarraDataGridView = new System.Windows.Forms.DataGridView();
-            this.iDProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.barraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BodegasGroupBox = new System.Windows.Forms.GroupBox();
             this.AgregarBodegaButton = new System.Windows.Forms.Button();
             this.BodegasDataGridView = new System.Windows.Forms.DataGridView();
-            this.iDBodegaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bodegaProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bodegaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bodegaTableAdapter = new AplicacionComercial.DSAplicacionComercialTableAdapters.BodegaTableAdapter();
+            this.barraTableAdapter = new AplicacionComercial.DSAplicacionComercialTableAdapters.BarraTableAdapter();
+            this.bodegaProductoTableAdapter = new AplicacionComercial.DSAplicacionComercialTableAdapters.BodegaProductoTableAdapter();
+            this.CancelarBarraButton = new System.Windows.Forms.Button();
+            this.iDBodegaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.iDProductoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.minimoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maximoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diasReposicionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadMinimaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bodegaProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bodegaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bodegaTableAdapter = new AplicacionComercial.DSAplicacionComercialTableAdapters.BodegaTableAdapter();
-            this.barraTableAdapter = new AplicacionComercial.DSAplicacionComercialTableAdapters.BarraTableAdapter();
-            this.bodegaProductoTableAdapter = new AplicacionComercial.DSAplicacionComercialTableAdapters.BodegaProductoTableAdapter();
+            this.iDProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.barraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CancelarButton = new System.Windows.Forms.Button();
+            this.productoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.EditarToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.NuevoToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.GuardarToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.CancelarToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.EliminarToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.BuscarToolStripButton = new System.Windows.Forms.ToolStripButton();
             iDProductoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             iDDepartamentoLabel = new System.Windows.Forms.Label();
@@ -118,8 +127,6 @@
             iDMedidaLabel = new System.Windows.Forms.Label();
             medidaLabel = new System.Windows.Forms.Label();
             imagenLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.productoBindingNavigator)).BeginInit();
-            this.productoBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSAplicacionComercial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoDataGridView)).BeginInit();
@@ -135,6 +142,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.BodegasDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bodegaProductoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bodegaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productoBindingNavigator)).BeginInit();
+            this.productoBindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
             // iDProductoLabel
@@ -143,7 +152,7 @@
             iDProductoLabel.Location = new System.Drawing.Point(39, 38);
             iDProductoLabel.Name = "iDProductoLabel";
             iDProductoLabel.Size = new System.Drawing.Size(67, 13);
-            iDProductoLabel.TabIndex = 2;
+            iDProductoLabel.TabIndex = 1;
             iDProductoLabel.Text = "ID Producto:";
             // 
             // descripcionLabel
@@ -152,7 +161,7 @@
             descripcionLabel.Location = new System.Drawing.Point(37, 64);
             descripcionLabel.Name = "descripcionLabel";
             descripcionLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionLabel.TabIndex = 4;
+            descripcionLabel.TabIndex = 3;
             descripcionLabel.Text = "Descripcion:";
             // 
             // iDDepartamentoLabel
@@ -161,7 +170,7 @@
             iDDepartamentoLabel.Location = new System.Drawing.Point(26, 90);
             iDDepartamentoLabel.Name = "iDDepartamentoLabel";
             iDDepartamentoLabel.Size = new System.Drawing.Size(77, 13);
-            iDDepartamentoLabel.TabIndex = 6;
+            iDDepartamentoLabel.TabIndex = 5;
             iDDepartamentoLabel.Text = "Departamento:";
             // 
             // iDIVALabel
@@ -170,7 +179,7 @@
             iDIVALabel.Location = new System.Drawing.Point(406, 90);
             iDIVALabel.Name = "iDIVALabel";
             iDIVALabel.Size = new System.Drawing.Size(27, 13);
-            iDIVALabel.TabIndex = 8;
+            iDIVALabel.TabIndex = 7;
             iDIVALabel.Text = "IVA:";
             // 
             // precioLabel
@@ -179,7 +188,7 @@
             precioLabel.Location = new System.Drawing.Point(63, 117);
             precioLabel.Name = "precioLabel";
             precioLabel.Size = new System.Drawing.Size(40, 13);
-            precioLabel.TabIndex = 10;
+            precioLabel.TabIndex = 9;
             precioLabel.Text = "Precio:";
             // 
             // notasLabel
@@ -188,7 +197,7 @@
             notasLabel.Location = new System.Drawing.Point(65, 170);
             notasLabel.Name = "notasLabel";
             notasLabel.Size = new System.Drawing.Size(38, 13);
-            notasLabel.TabIndex = 12;
+            notasLabel.TabIndex = 18;
             notasLabel.Text = "Notas:";
             // 
             // iDMedidaLabel
@@ -215,47 +224,8 @@
             imagenLabel.Location = new System.Drawing.Point(340, 119);
             imagenLabel.Name = "imagenLabel";
             imagenLabel.Size = new System.Drawing.Size(45, 13);
-            imagenLabel.TabIndex = 18;
+            imagenLabel.TabIndex = 11;
             imagenLabel.Text = "Imagen:";
-            // 
-            // productoBindingNavigator
-            // 
-            this.productoBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.productoBindingNavigator.BindingSource = this.productoBindingSource;
-            this.productoBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.productoBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.productoBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.productoBindingNavigatorSaveItem});
-            this.productoBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.productoBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.productoBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.productoBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.productoBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.productoBindingNavigator.Name = "productoBindingNavigator";
-            this.productoBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.productoBindingNavigator.Size = new System.Drawing.Size(991, 25);
-            this.productoBindingNavigator.TabIndex = 0;
-            this.productoBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
             // 
             // productoBindingSource
             // 
@@ -266,95 +236,6 @@
             // 
             this.dSAplicacionComercial.DataSetName = "DSAplicacionComercial";
             this.dSAplicacionComercial.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Eliminar";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
-            this.bindingNavigatorMoveFirstItem.Click += new System.EventHandler(this.BindingNavigatorMoveFirstItem_Click);
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
-            this.bindingNavigatorMovePreviousItem.Click += new System.EventHandler(this.BindingNavigatorMovePreviousItem_Click);
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Posición";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
-            this.bindingNavigatorMoveNextItem.Click += new System.EventHandler(this.BindingNavigatorMoveNextItem_Click);
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Mover último";
-            this.bindingNavigatorMoveLastItem.Click += new System.EventHandler(this.BindingNavigatorMoveLastItem_Click);
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // productoBindingNavigatorSaveItem
-            // 
-            this.productoBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.productoBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("productoBindingNavigatorSaveItem.Image")));
-            this.productoBindingNavigatorSaveItem.Name = "productoBindingNavigatorSaveItem";
-            this.productoBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.productoBindingNavigatorSaveItem.Text = "Guardar datos";
-            this.productoBindingNavigatorSaveItem.Click += new System.EventHandler(this.ProductoBindingNavigatorSaveItem_Click);
             // 
             // productoDataGridView
             // 
@@ -524,27 +405,30 @@
             this.iDProductoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productoBindingSource, "IDProducto", true));
             this.iDProductoTextBox.Location = new System.Drawing.Point(109, 35);
             this.iDProductoTextBox.Name = "iDProductoTextBox";
+            this.iDProductoTextBox.ReadOnly = true;
             this.iDProductoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.iDProductoTextBox.TabIndex = 3;
+            this.iDProductoTextBox.TabIndex = 2;
             // 
             // descripcionTextBox
             // 
             this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productoBindingSource, "Descripcion", true));
             this.descripcionTextBox.Location = new System.Drawing.Point(109, 61);
             this.descripcionTextBox.Name = "descripcionTextBox";
+            this.descripcionTextBox.ReadOnly = true;
             this.descripcionTextBox.Size = new System.Drawing.Size(540, 20);
-            this.descripcionTextBox.TabIndex = 5;
+            this.descripcionTextBox.TabIndex = 4;
             // 
             // iDDepartamentoComboBox
             // 
             this.iDDepartamentoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productoBindingSource, "IDDepartamento", true));
             this.iDDepartamentoComboBox.DataSource = this.departamentoBindingSource;
             this.iDDepartamentoComboBox.DisplayMember = "Descripcion";
+            this.iDDepartamentoComboBox.Enabled = false;
             this.iDDepartamentoComboBox.FormattingEnabled = true;
             this.iDDepartamentoComboBox.Location = new System.Drawing.Point(109, 87);
             this.iDDepartamentoComboBox.Name = "iDDepartamentoComboBox";
             this.iDDepartamentoComboBox.Size = new System.Drawing.Size(249, 21);
-            this.iDDepartamentoComboBox.TabIndex = 7;
+            this.iDDepartamentoComboBox.TabIndex = 6;
             this.iDDepartamentoComboBox.ValueMember = "IDDepartamento";
             // 
             // departamentoTableAdapter
@@ -556,11 +440,12 @@
             this.iDIVAComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productoBindingSource, "IDIVA", true));
             this.iDIVAComboBox.DataSource = this.iVABindingSource;
             this.iDIVAComboBox.DisplayMember = "Descripcion";
+            this.iDIVAComboBox.Enabled = false;
             this.iDIVAComboBox.FormattingEnabled = true;
             this.iDIVAComboBox.Location = new System.Drawing.Point(439, 87);
             this.iDIVAComboBox.Name = "iDIVAComboBox";
             this.iDIVAComboBox.Size = new System.Drawing.Size(210, 21);
-            this.iDIVAComboBox.TabIndex = 9;
+            this.iDIVAComboBox.TabIndex = 8;
             this.iDIVAComboBox.ValueMember = "IDIVA";
             // 
             // iVATableAdapter
@@ -572,8 +457,9 @@
             this.precioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productoBindingSource, "Precio", true));
             this.precioTextBox.Location = new System.Drawing.Point(109, 114);
             this.precioTextBox.Name = "precioTextBox";
+            this.precioTextBox.ReadOnly = true;
             this.precioTextBox.Size = new System.Drawing.Size(151, 20);
-            this.precioTextBox.TabIndex = 11;
+            this.precioTextBox.TabIndex = 10;
             // 
             // notasTextBox
             // 
@@ -581,15 +467,17 @@
             this.notasTextBox.Location = new System.Drawing.Point(109, 167);
             this.notasTextBox.Multiline = true;
             this.notasTextBox.Name = "notasTextBox";
+            this.notasTextBox.ReadOnly = true;
             this.notasTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.notasTextBox.Size = new System.Drawing.Size(540, 75);
-            this.notasTextBox.TabIndex = 13;
+            this.notasTextBox.TabIndex = 19;
             // 
             // iDMedidaComboBox
             // 
             this.iDMedidaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productoBindingSource, "IDMedida", true));
             this.iDMedidaComboBox.DataSource = this.medidaBindingSource;
             this.iDMedidaComboBox.DisplayMember = "Descripcion";
+            this.iDMedidaComboBox.Enabled = false;
             this.iDMedidaComboBox.FormattingEnabled = true;
             this.iDMedidaComboBox.Location = new System.Drawing.Point(109, 140);
             this.iDMedidaComboBox.Name = "iDMedidaComboBox";
@@ -606,6 +494,7 @@
             this.medidaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productoBindingSource, "Medida", true));
             this.medidaTextBox.Location = new System.Drawing.Point(439, 140);
             this.medidaTextBox.Name = "medidaTextBox";
+            this.medidaTextBox.ReadOnly = true;
             this.medidaTextBox.Size = new System.Drawing.Size(210, 20);
             this.medidaTextBox.TabIndex = 17;
             // 
@@ -614,15 +503,17 @@
             this.imagenTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productoBindingSource, "Imagen", true));
             this.imagenTextBox.Location = new System.Drawing.Point(391, 114);
             this.imagenTextBox.Name = "imagenTextBox";
+            this.imagenTextBox.ReadOnly = true;
             this.imagenTextBox.Size = new System.Drawing.Size(224, 20);
-            this.imagenTextBox.TabIndex = 19;
+            this.imagenTextBox.TabIndex = 12;
             // 
             // BuscarImagenButton
             // 
+            this.BuscarImagenButton.Enabled = false;
             this.BuscarImagenButton.Location = new System.Drawing.Point(621, 114);
             this.BuscarImagenButton.Name = "BuscarImagenButton";
             this.BuscarImagenButton.Size = new System.Drawing.Size(28, 23);
-            this.BuscarImagenButton.TabIndex = 20;
+            this.BuscarImagenButton.TabIndex = 13;
             this.BuscarImagenButton.Text = "...";
             this.BuscarImagenButton.UseVisualStyleBackColor = true;
             // 
@@ -636,41 +527,26 @@
             // 
             // BarrasGroupBox
             // 
+            this.BarrasGroupBox.Controls.Add(this.CancelarButton);
+            this.BarrasGroupBox.Controls.Add(this.CancelarBarraButton);
             this.BarrasGroupBox.Controls.Add(this.AgregarBarraButton);
-            this.BarrasGroupBox.Controls.Add(this.textBox1);
-            this.BarrasGroupBox.Controls.Add(this.label1);
             this.BarrasGroupBox.Controls.Add(this.BarraDataGridView);
             this.BarrasGroupBox.Location = new System.Drawing.Point(12, 248);
             this.BarrasGroupBox.Name = "BarrasGroupBox";
             this.BarrasGroupBox.Size = new System.Drawing.Size(306, 155);
-            this.BarrasGroupBox.TabIndex = 22;
+            this.BarrasGroupBox.TabIndex = 20;
             this.BarrasGroupBox.TabStop = false;
             this.BarrasGroupBox.Text = "Codigos de Barras";
             // 
             // AgregarBarraButton
             // 
-            this.AgregarBarraButton.Location = new System.Drawing.Point(211, 22);
+            this.AgregarBarraButton.Enabled = false;
+            this.AgregarBarraButton.Location = new System.Drawing.Point(131, 23);
             this.AgregarBarraButton.Name = "AgregarBarraButton";
             this.AgregarBarraButton.Size = new System.Drawing.Size(75, 23);
-            this.AgregarBarraButton.TabIndex = 3;
+            this.AgregarBarraButton.TabIndex = 1;
             this.AgregarBarraButton.Text = "Agregar";
             this.AgregarBarraButton.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(52, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(123, 20);
-            this.textBox1.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Barra";
             // 
             // BarraDataGridView
             // 
@@ -678,6 +554,7 @@
             this.BarraDataGridView.AllowUserToDeleteRows = false;
             this.BarraDataGridView.AllowUserToOrderColumns = true;
             this.BarraDataGridView.AutoGenerateColumns = false;
+            this.BarraDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.BarraDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.BarraDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDProductoDataGridViewTextBoxColumn,
@@ -688,20 +565,6 @@
             this.BarraDataGridView.ReadOnly = true;
             this.BarraDataGridView.Size = new System.Drawing.Size(280, 95);
             this.BarraDataGridView.TabIndex = 0;
-            // 
-            // iDProductoDataGridViewTextBoxColumn
-            // 
-            this.iDProductoDataGridViewTextBoxColumn.DataPropertyName = "IDProducto";
-            this.iDProductoDataGridViewTextBoxColumn.HeaderText = "IDProducto";
-            this.iDProductoDataGridViewTextBoxColumn.Name = "iDProductoDataGridViewTextBoxColumn";
-            this.iDProductoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // barraDataGridViewTextBoxColumn
-            // 
-            this.barraDataGridViewTextBoxColumn.DataPropertyName = "Barra";
-            this.barraDataGridViewTextBoxColumn.HeaderText = "Barra";
-            this.barraDataGridViewTextBoxColumn.Name = "barraDataGridViewTextBoxColumn";
-            this.barraDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // barraBindingSource
             // 
@@ -717,17 +580,18 @@
             this.BodegasGroupBox.Location = new System.Drawing.Point(343, 248);
             this.BodegasGroupBox.Name = "BodegasGroupBox";
             this.BodegasGroupBox.Size = new System.Drawing.Size(563, 155);
-            this.BodegasGroupBox.TabIndex = 23;
+            this.BodegasGroupBox.TabIndex = 21;
             this.BodegasGroupBox.TabStop = false;
             this.BodegasGroupBox.Text = "Parametros de Bodegas";
             // 
             // AgregarBodegaButton
             // 
             this.AgregarBodegaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AgregarBodegaButton.Enabled = false;
             this.AgregarBodegaButton.Location = new System.Drawing.Point(482, 19);
             this.AgregarBodegaButton.Name = "AgregarBodegaButton";
             this.AgregarBodegaButton.Size = new System.Drawing.Size(75, 26);
-            this.AgregarBodegaButton.TabIndex = 3;
+            this.AgregarBodegaButton.TabIndex = 1;
             this.AgregarBodegaButton.Text = "Agregar";
             this.AgregarBodegaButton.UseVisualStyleBackColor = true;
             // 
@@ -739,6 +603,7 @@
             this.BodegasDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BodegasDataGridView.AutoGenerateColumns = false;
+            this.BodegasDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.BodegasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.BodegasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDBodegaDataGridViewTextBoxColumn,
@@ -749,60 +614,11 @@
             this.diasReposicionDataGridViewTextBoxColumn,
             this.cantidadMinimaDataGridViewTextBoxColumn});
             this.BodegasDataGridView.DataSource = this.bodegaProductoBindingSource;
-            this.BodegasDataGridView.Location = new System.Drawing.Point(6, 52);
+            this.BodegasDataGridView.Location = new System.Drawing.Point(6, 51);
             this.BodegasDataGridView.Name = "BodegasDataGridView";
             this.BodegasDataGridView.ReadOnly = true;
             this.BodegasDataGridView.Size = new System.Drawing.Size(551, 95);
             this.BodegasDataGridView.TabIndex = 0;
-            // 
-            // iDBodegaDataGridViewTextBoxColumn
-            // 
-            this.iDBodegaDataGridViewTextBoxColumn.DataPropertyName = "IDBodega";
-            this.iDBodegaDataGridViewTextBoxColumn.HeaderText = "IDBodega";
-            this.iDBodegaDataGridViewTextBoxColumn.Name = "iDBodegaDataGridViewTextBoxColumn";
-            this.iDBodegaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iDProductoDataGridViewTextBoxColumn1
-            // 
-            this.iDProductoDataGridViewTextBoxColumn1.DataPropertyName = "IDProducto";
-            this.iDProductoDataGridViewTextBoxColumn1.HeaderText = "IDProducto";
-            this.iDProductoDataGridViewTextBoxColumn1.Name = "iDProductoDataGridViewTextBoxColumn1";
-            this.iDProductoDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // stockDataGridViewTextBoxColumn
-            // 
-            this.stockDataGridViewTextBoxColumn.DataPropertyName = "Stock";
-            this.stockDataGridViewTextBoxColumn.HeaderText = "Stock";
-            this.stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
-            this.stockDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // minimoDataGridViewTextBoxColumn
-            // 
-            this.minimoDataGridViewTextBoxColumn.DataPropertyName = "Minimo";
-            this.minimoDataGridViewTextBoxColumn.HeaderText = "Minimo";
-            this.minimoDataGridViewTextBoxColumn.Name = "minimoDataGridViewTextBoxColumn";
-            this.minimoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // maximoDataGridViewTextBoxColumn
-            // 
-            this.maximoDataGridViewTextBoxColumn.DataPropertyName = "Maximo";
-            this.maximoDataGridViewTextBoxColumn.HeaderText = "Maximo";
-            this.maximoDataGridViewTextBoxColumn.Name = "maximoDataGridViewTextBoxColumn";
-            this.maximoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // diasReposicionDataGridViewTextBoxColumn
-            // 
-            this.diasReposicionDataGridViewTextBoxColumn.DataPropertyName = "DiasReposicion";
-            this.diasReposicionDataGridViewTextBoxColumn.HeaderText = "DiasReposicion";
-            this.diasReposicionDataGridViewTextBoxColumn.Name = "diasReposicionDataGridViewTextBoxColumn";
-            this.diasReposicionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cantidadMinimaDataGridViewTextBoxColumn
-            // 
-            this.cantidadMinimaDataGridViewTextBoxColumn.DataPropertyName = "CantidadMinima";
-            this.cantidadMinimaDataGridViewTextBoxColumn.HeaderText = "CantidadMinima";
-            this.cantidadMinimaDataGridViewTextBoxColumn.Name = "cantidadMinimaDataGridViewTextBoxColumn";
-            this.cantidadMinimaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // bodegaProductoBindingSource
             // 
@@ -826,11 +642,274 @@
             // 
             this.bodegaProductoTableAdapter.ClearBeforeFill = true;
             // 
+            // CancelarBarraButton
+            // 
+            this.CancelarBarraButton.Location = new System.Drawing.Point(920, -53);
+            this.CancelarBarraButton.Name = "CancelarBarraButton";
+            this.CancelarBarraButton.Size = new System.Drawing.Size(75, 23);
+            this.CancelarBarraButton.TabIndex = 2;
+            this.CancelarBarraButton.Text = "Cancelar";
+            this.CancelarBarraButton.UseVisualStyleBackColor = true;
+            // 
+            // iDBodegaDataGridViewTextBoxColumn
+            // 
+            this.iDBodegaDataGridViewTextBoxColumn.DataPropertyName = "IDBodega";
+            this.iDBodegaDataGridViewTextBoxColumn.DataSource = this.bodegaBindingSource;
+            this.iDBodegaDataGridViewTextBoxColumn.DisplayMember = "Descripcion";
+            this.iDBodegaDataGridViewTextBoxColumn.HeaderText = "Bodega";
+            this.iDBodegaDataGridViewTextBoxColumn.Name = "iDBodegaDataGridViewTextBoxColumn";
+            this.iDBodegaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDBodegaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.iDBodegaDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.iDBodegaDataGridViewTextBoxColumn.ValueMember = "IDBodega";
+            // 
+            // iDProductoDataGridViewTextBoxColumn1
+            // 
+            this.iDProductoDataGridViewTextBoxColumn1.DataPropertyName = "IDProducto";
+            this.iDProductoDataGridViewTextBoxColumn1.HeaderText = "IDProducto";
+            this.iDProductoDataGridViewTextBoxColumn1.Name = "iDProductoDataGridViewTextBoxColumn1";
+            this.iDProductoDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.iDProductoDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // stockDataGridViewTextBoxColumn
+            // 
+            this.stockDataGridViewTextBoxColumn.DataPropertyName = "Stock";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.stockDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.stockDataGridViewTextBoxColumn.HeaderText = "Stock";
+            this.stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
+            this.stockDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // minimoDataGridViewTextBoxColumn
+            // 
+            this.minimoDataGridViewTextBoxColumn.DataPropertyName = "Minimo";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.minimoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.minimoDataGridViewTextBoxColumn.HeaderText = "Minimo";
+            this.minimoDataGridViewTextBoxColumn.Name = "minimoDataGridViewTextBoxColumn";
+            this.minimoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // maximoDataGridViewTextBoxColumn
+            // 
+            this.maximoDataGridViewTextBoxColumn.DataPropertyName = "Maximo";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "N2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.maximoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            this.maximoDataGridViewTextBoxColumn.HeaderText = "Maximo";
+            this.maximoDataGridViewTextBoxColumn.Name = "maximoDataGridViewTextBoxColumn";
+            this.maximoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // diasReposicionDataGridViewTextBoxColumn
+            // 
+            this.diasReposicionDataGridViewTextBoxColumn.DataPropertyName = "DiasReposicion";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.diasReposicionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            this.diasReposicionDataGridViewTextBoxColumn.HeaderText = "Dias Reposicion";
+            this.diasReposicionDataGridViewTextBoxColumn.Name = "diasReposicionDataGridViewTextBoxColumn";
+            this.diasReposicionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cantidadMinimaDataGridViewTextBoxColumn
+            // 
+            this.cantidadMinimaDataGridViewTextBoxColumn.DataPropertyName = "CantidadMinima";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "N2";
+            this.cantidadMinimaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            this.cantidadMinimaDataGridViewTextBoxColumn.HeaderText = "Cantidad Minima";
+            this.cantidadMinimaDataGridViewTextBoxColumn.Name = "cantidadMinimaDataGridViewTextBoxColumn";
+            this.cantidadMinimaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDProductoDataGridViewTextBoxColumn
+            // 
+            this.iDProductoDataGridViewTextBoxColumn.DataPropertyName = "IDProducto";
+            this.iDProductoDataGridViewTextBoxColumn.HeaderText = "IDProducto";
+            this.iDProductoDataGridViewTextBoxColumn.Name = "iDProductoDataGridViewTextBoxColumn";
+            this.iDProductoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDProductoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // barraDataGridViewTextBoxColumn
+            // 
+            this.barraDataGridViewTextBoxColumn.DataPropertyName = "Barra";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.barraDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.barraDataGridViewTextBoxColumn.HeaderText = "Barra";
+            this.barraDataGridViewTextBoxColumn.Name = "barraDataGridViewTextBoxColumn";
+            this.barraDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // CancelarButton
+            // 
+            this.CancelarButton.Enabled = false;
+            this.CancelarButton.Location = new System.Drawing.Point(212, 23);
+            this.CancelarButton.Name = "CancelarButton";
+            this.CancelarButton.Size = new System.Drawing.Size(75, 23);
+            this.CancelarButton.TabIndex = 3;
+            this.CancelarButton.Text = "Cancelar";
+            this.CancelarButton.UseVisualStyleBackColor = true;
+            // 
+            // productoBindingNavigator
+            // 
+            this.productoBindingNavigator.AddNewItem = null;
+            this.productoBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.productoBindingNavigator.DeleteItem = null;
+            this.productoBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.EditarToolStripButton,
+            this.NuevoToolStripButton,
+            this.GuardarToolStripButton,
+            this.CancelarToolStripButton,
+            this.EliminarToolStripButton,
+            this.BuscarToolStripButton});
+            this.productoBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.productoBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.productoBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.productoBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.productoBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.productoBindingNavigator.Name = "productoBindingNavigator";
+            this.productoBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.productoBindingNavigator.Size = new System.Drawing.Size(991, 25);
+            this.productoBindingNavigator.TabIndex = 55;
+            this.productoBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Posición";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Mover último";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // EditarToolStripButton
+            // 
+            this.EditarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.EditarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("EditarToolStripButton.Image")));
+            this.EditarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.EditarToolStripButton.Name = "EditarToolStripButton";
+            this.EditarToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.EditarToolStripButton.Text = "toolStripButton1";
+            // 
+            // NuevoToolStripButton
+            // 
+            this.NuevoToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.NuevoToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("NuevoToolStripButton.Image")));
+            this.NuevoToolStripButton.Name = "NuevoToolStripButton";
+            this.NuevoToolStripButton.RightToLeftAutoMirrorImage = true;
+            this.NuevoToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.NuevoToolStripButton.Text = "Agregar nuevo";
+            // 
+            // GuardarToolStripButton
+            // 
+            this.GuardarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.GuardarToolStripButton.Enabled = false;
+            this.GuardarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarToolStripButton.Image")));
+            this.GuardarToolStripButton.Name = "GuardarToolStripButton";
+            this.GuardarToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.GuardarToolStripButton.Text = "Guardar datos";
+            // 
+            // CancelarToolStripButton
+            // 
+            this.CancelarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.CancelarToolStripButton.Enabled = false;
+            this.CancelarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("CancelarToolStripButton.Image")));
+            this.CancelarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.CancelarToolStripButton.Name = "CancelarToolStripButton";
+            this.CancelarToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.CancelarToolStripButton.Text = "toolStripButton2";
+            // 
+            // EliminarToolStripButton
+            // 
+            this.EliminarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.EliminarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarToolStripButton.Image")));
+            this.EliminarToolStripButton.Name = "EliminarToolStripButton";
+            this.EliminarToolStripButton.RightToLeftAutoMirrorImage = true;
+            this.EliminarToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.EliminarToolStripButton.Text = "Eliminar";
+            // 
+            // BuscarToolStripButton
+            // 
+            this.BuscarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BuscarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarToolStripButton.Image")));
+            this.BuscarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BuscarToolStripButton.Name = "BuscarToolStripButton";
+            this.BuscarToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.BuscarToolStripButton.Text = "toolStripButton3";
+            // 
             // FrmProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(991, 674);
+            this.Controls.Add(this.productoBindingNavigator);
             this.Controls.Add(this.BodegasGroupBox);
             this.Controls.Add(this.BarrasGroupBox);
             this.Controls.Add(this.pictureBox1);
@@ -854,13 +933,9 @@
             this.Controls.Add(iDProductoLabel);
             this.Controls.Add(this.iDProductoTextBox);
             this.Controls.Add(this.productoDataGridView);
-            this.Controls.Add(this.productoBindingNavigator);
             this.Name = "FrmProducto";
             this.Text = "Producto";
             this.Load += new System.EventHandler(this.FrmProducto_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.productoBindingNavigator)).EndInit();
-            this.productoBindingNavigator.ResumeLayout(false);
-            this.productoBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSAplicacionComercial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoDataGridView)).EndInit();
@@ -870,13 +945,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dSAplicacionComercial1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.BarrasGroupBox.ResumeLayout(false);
-            this.BarrasGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BarraDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barraBindingSource)).EndInit();
             this.BodegasGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BodegasDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bodegaProductoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bodegaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productoBindingNavigator)).EndInit();
+            this.productoBindingNavigator.ResumeLayout(false);
+            this.productoBindingNavigator.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -888,19 +965,6 @@
         private System.Windows.Forms.BindingSource productoBindingSource;
         private DSAplicacionComercialTableAdapters.ProductoTableAdapter productoTableAdapter;
         private DSAplicacionComercialTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator productoBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton productoBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView productoDataGridView;
         private System.Windows.Forms.TextBox iDProductoTextBox;
         private System.Windows.Forms.TextBox descripcionTextBox;
@@ -931,8 +995,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.GroupBox BarrasGroupBox;
         private System.Windows.Forms.Button AgregarBarraButton;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView BarraDataGridView;
         private System.Windows.Forms.GroupBox BodegasGroupBox;
         private System.Windows.Forms.Button AgregarBodegaButton;
@@ -941,16 +1003,34 @@
         private DSAplicacionComercialTableAdapters.BodegaTableAdapter bodegaTableAdapter;
         private System.Windows.Forms.BindingSource barraBindingSource;
         private DSAplicacionComercialTableAdapters.BarraTableAdapter barraTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDProductoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn barraDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bodegaProductoBindingSource;
         private DSAplicacionComercialTableAdapters.BodegaProductoTableAdapter bodegaProductoTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDBodegaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button CancelarBarraButton;
+        private System.Windows.Forms.DataGridViewComboBoxColumn iDBodegaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDProductoDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn minimoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn maximoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn diasReposicionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadMinimaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDProductoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn barraDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button CancelarButton;
+        private System.Windows.Forms.BindingNavigator productoBindingNavigator;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton EditarToolStripButton;
+        private System.Windows.Forms.ToolStripButton NuevoToolStripButton;
+        private System.Windows.Forms.ToolStripButton GuardarToolStripButton;
+        private System.Windows.Forms.ToolStripButton CancelarToolStripButton;
+        private System.Windows.Forms.ToolStripButton EliminarToolStripButton;
+        private System.Windows.Forms.ToolStripButton BuscarToolStripButton;
     }
 }
