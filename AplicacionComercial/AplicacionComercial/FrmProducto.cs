@@ -48,37 +48,14 @@ namespace AplicacionComercial
             this.bodegaProductoTableAdapter.FillBy(this.dSAplicacionComercial.BodegaProducto, Convert.ToInt32(iDProductoTextBox.Text));
         }
 
-        private void BindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
-        {
-            LlenarGrillas();
-        }
 
-        private void BindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
-        {
-            LlenarGrillas();
-        }
-
-        private void BindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
-        {
-            LlenarGrillas();
-        }
-
-        private void BindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
-        {
-            LlenarGrillas();
-        }
-
-        private void EditarToolStripButton_Click_1(object sender, EventArgs e)
-        {
-            HabilitarCampos();
-        }
 
         private void HabilitarCampos()
         {
-            //bindingNavigatorMoveFirstItem.Enabled = false;
-            //bindingNavigatorMoveNextItem.Enabled = false;
-            //bindingNavigatorMoveLastItem.Enabled = false;
-            //bindingNavigatorMoveLastItem.Enabled = false;
+            bindingNavigatorMoveFirstItem.Enabled = false;
+            bindingNavigatorMoveNextItem.Enabled = false;
+            bindingNavigatorMoveLastItem.Enabled = false;
+            bindingNavigatorMoveLastItem.Enabled = false;
             EditarToolStripButton.Enabled = false;
             NuevoToolStripButton.Enabled = false;
             GuardarToolStripButton.Enabled = true;
@@ -95,20 +72,20 @@ namespace AplicacionComercial
             iDMedidaComboBox.Enabled = true;
             medidaTextBox.ReadOnly = false;
             notasTextBox.ReadOnly = false;
+
+            AgregarBarraButton.Enabled = true;
+            CancelarButton.Enabled = true;
+            AgregarBodegaButton.Enabled = true;
+            BuscarImagenButton.Enabled = true;
         }
 
-        private void CancelarToolStripButton_Click(object sender, EventArgs e)
-        {
-            DeshabilitarCampos();
-            productoBindingSource.CancelEdit();
-        }
 
         private void DeshabilitarCampos()
         {
-            //bindingNavigatorMoveFirstItem.Enabled = true;
-            //bindingNavigatorMoveNextItem.Enabled = true;
-            //bindingNavigatorMoveLastItem.Enabled = true;
-            //bindingNavigatorMoveLastItem.Enabled = true;
+            bindingNavigatorMoveFirstItem.Enabled = true;
+            bindingNavigatorMoveNextItem.Enabled = true;
+            bindingNavigatorMoveLastItem.Enabled = true;
+            bindingNavigatorMoveLastItem.Enabled = true;
             EditarToolStripButton.Enabled = true;
             NuevoToolStripButton.Enabled = true;
             GuardarToolStripButton.Enabled = false;
@@ -125,11 +102,52 @@ namespace AplicacionComercial
             iDMedidaComboBox.Enabled = false;
             medidaTextBox.ReadOnly = true;
             notasTextBox.ReadOnly = true;
+
+            AgregarBarraButton.Enabled = false;
+            CancelarButton.Enabled = false;
+            AgregarBodegaButton.Enabled = false;
+            BuscarImagenButton.Enabled = false;
+        }
+
+
+
+        private void BindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
+        {
+            LlenarGrillas();
+        }
+
+        private void BindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
+        {
+            LlenarGrillas();
+        }
+
+        private void BindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
+        {
+            LlenarGrillas();
+        }
+
+        private void BindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
+        {
+            LlenarGrillas();
         }
 
         private void EditarToolStripButton_Click(object sender, EventArgs e)
         {
+            HabilitarCampos();
+        }
 
+        private void CancelarToolStripButton_Click_1(object sender, EventArgs e)
+        {
+            DeshabilitarCampos();
+            productoBindingSource.CancelEdit();
+        }
+
+        private void NuevoToolStripButton_Click(object sender, EventArgs e)
+        {
+            HabilitarCampos();
+            productoBindingSource.AddNew();
+            BodegasDataGridView.DataSource = null;
+            BarraDataGridView.DataSource = null;
         }
     }
 

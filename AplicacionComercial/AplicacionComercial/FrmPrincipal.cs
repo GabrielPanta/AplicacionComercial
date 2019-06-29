@@ -34,10 +34,6 @@ namespace AplicacionComercial
             Application.Exit();
         }
 
-        private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
@@ -61,9 +57,8 @@ namespace AplicacionComercial
 
         private void ProductosToolStripButton_Click(object sender, EventArgs e)
         {
-            FrmProducto miform = new FrmProducto();
-            miform.Show();
-            miform.MdiParent = this;
+            ProductosToolStripMenuItem_Click( sender,  e);
         }
+
     }
 }
