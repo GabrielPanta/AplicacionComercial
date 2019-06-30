@@ -12,6 +12,7 @@ namespace AplicacionComercial
 {
     public partial class FrmProducto : Form
     {
+        private bool nuevo;
         public FrmProducto()
         {
             InitializeComponent();
@@ -39,6 +40,7 @@ namespace AplicacionComercial
             this.productoTableAdapter.Fill(this.dSAplicacionComercial.Producto);
             
             LlenarGrillas();
+            
         }
 
         private void LlenarGrillas()
@@ -63,7 +65,7 @@ namespace AplicacionComercial
             EliminarToolStripButton.Enabled = false;
             BuscarToolStripButton.Enabled = false;
 
-            iDProductoTextBox.ReadOnly = false;
+            //iDProductoTextBox.ReadOnly = false;
             descripcionTextBox.ReadOnly = false;
             iDDepartamentoComboBox.Enabled = true;
             iDIVAComboBox.Enabled = true;
@@ -77,6 +79,8 @@ namespace AplicacionComercial
             CancelarButton.Enabled = true;
             AgregarBodegaButton.Enabled = true;
             BuscarImagenButton.Enabled = true;
+
+            descripcionTextBox.Focus();
         }
 
 
@@ -93,7 +97,7 @@ namespace AplicacionComercial
             EliminarToolStripButton.Enabled = true;
             BuscarToolStripButton.Enabled = true;
 
-            iDProductoTextBox.ReadOnly = true;
+           // iDProductoTextBox.ReadOnly = true;
             descripcionTextBox.ReadOnly = true;
             iDDepartamentoComboBox.Enabled = false;
             iDIVAComboBox.Enabled = false;
@@ -134,20 +138,67 @@ namespace AplicacionComercial
         private void EditarToolStripButton_Click(object sender, EventArgs e)
         {
             HabilitarCampos();
+            nuevo = false;
         }
 
         private void CancelarToolStripButton_Click_1(object sender, EventArgs e)
         {
             DeshabilitarCampos();
             productoBindingSource.CancelEdit();
+            LlenarGrillas();
+            errorProvider1.Clear();
         }
 
         private void NuevoToolStripButton_Click(object sender, EventArgs e)
         {
+            nuevo = true;
             HabilitarCampos();
             productoBindingSource.AddNew();
-            BodegasDataGridView.DataSource = null;
-            BarraDataGridView.DataSource = null;
+            bindingNavigatorMoveFirstItem.Enabled = false;
+            bindingNavigatorMovePreviousItem.Enabled = false;
+            LlenarGrillas();
+            //BodegasDataGridView.DataSource = null;
+            //BarraDataGridView.DataSource = null;
+        }
+
+        private void EliminarToolStripButton_Click(object sender, EventArgs e)
+        {
+            DialogResult rspta = MessageBox.Show("¿Estas Seguro de Eliminar el Registro Actual", "Confirmacion",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (rspta == DialogResult.No) return;
+            productoBindingSource.RemoveAt(productoBindingSource.Position);
+            this.tableAdapterManager.UpdateAll(this.dSAplicacionComercial);
+        }
+
+        private void GuardarToolStripButton_Click(object sender, EventArgs e)
+        {
+            if (!ValidarCampos()) return;
+            this.Validate();
+            this.productoBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dSAplicacionComercial);
+            DeshabilitarCampos();
+        }
+
+        private bool ValidarCampos()
+        {
+            if (nuevo == true)
+            {
+                if (descripcionTextBox.Text == string.Empty)
+                {
+                    errorProvider1.SetError(descripcionTextBox, "Debe Ingresar Una Descripcion");
+                    return false;
+                }
+                errorProvider1.Clear();
+
+                if (iDDepartamentoComboBox.SelectedIndex == -1)
+                {
+                    errorProvider1.SetError(iDDepartamentoComboBox, "Debe Seleccionar un Departamento");
+                    return false;
+                }
+                errorProvider1.Clear();
+
+            }
+            return true;
         }
     }
 
