@@ -266,31 +266,31 @@
   <data name="EditarToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        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
+        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
         TkSuQmCC
 </value>
   </data>
@@ -393,7 +393,7 @@
   <data name="BuscarToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAcFSURBVFhHtZdZbFPpFccBdahoHzotD+0DAapWgCohBEhI
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAcFSURBVFhHtZdZbFPpFccBdahoHzotD+0DAapWgCokBEhI
         vLGICARvIPGA1JdKPPWFdZA6KqNWzFQaNemUqu1UTNuEJe2UERkBzp54X+LY8XK9xLn2jZfY8Y3jJbaT
         QCD/nvPZN+Np6MQZtUf6y9f29Xd+95zzne94U4NtJn2D9NbXFP92C+lr29sXL15sNRqNt9eT2WwW0t7r
         9XrWLwcHB39G63y7ttzGbde1a9c+XFhYwOLiIpaWlvDy5Uuh5eVlvHr1Suj169dCKysr4j3fNz8/j1wu
@@ -423,7 +423,7 @@
         pDMZ1DQjosCp4HrQUvGfQBqU1j0bW3nn/fs4dOiQgNi+fTtu3bqFI0eO4Ny5c3dqLr9sAoCHiel0DYCj
         0AihgfCE0wjSCLMKVIfS6XQ4fvw4tmzZgm3btolInDp1aoUm5ZN1v6vWcv78+XdG9Hozi+a3tTKZzHQu
         fCH6g9iMtbW1WY4ePVrZunWrKM6dO3fizJkzP637XbVvkX5M4j8S/3Pt27eP0t86sXfvXk6Dg9LA/tYY
-        z+3/Nx0+fPitEydOfP/27dv1f0qbNv0bhPpaFcsNuGQAAAAASUVORK5CYII=
+        z+3/Nx0+fPitEydOfP/27dv1f0qbNv0bfTJaEjcWg8MAAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="errorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

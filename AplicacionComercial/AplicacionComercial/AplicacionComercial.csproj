@@ -54,6 +54,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSAplicacionComercial.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FrmBarra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBarra.Designer.cs">
+      <DependentUpon>FrmBarra.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmBarra.resx">
+      <DependentUpon>FrmBarra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>

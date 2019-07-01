@@ -230,6 +230,12 @@ namespace AplicacionComercial
                 }
             }
         }
+
+        private void AgregarBarraButton_Click(object sender, EventArgs e)
+        {
+            FrmBarra miBarra = new FrmBarra();
+            miBarra.ShowDialog();
+        }
     }
 
 }

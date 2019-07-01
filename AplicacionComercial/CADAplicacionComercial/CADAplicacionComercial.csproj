@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CADBarra.cs" />
     <Compile Include="CADUsuario.cs" />
     <Compile Include="DSAplicacionComercial.Designer.cs">
       <AutoGen>True</AutoGen>
