@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,7 +41,7 @@ namespace AplicacionComercial
             this.productoTableAdapter.Fill(this.dSAplicacionComercial.Producto);
             
             LlenarGrillas();
-            
+            CargarImagen();
         }
 
         private void LlenarGrillas()
@@ -70,7 +71,7 @@ namespace AplicacionComercial
             iDDepartamentoComboBox.Enabled = true;
             iDIVAComboBox.Enabled = true;
             precioTextBox.ReadOnly = false;
-            imagenTextBox.ReadOnly = false;
+            //imagenTextBox.ReadOnly = false;
             iDMedidaComboBox.Enabled = true;
             medidaTextBox.ReadOnly = false;
             notasTextBox.ReadOnly = false;
@@ -102,7 +103,7 @@ namespace AplicacionComercial
             iDDepartamentoComboBox.Enabled = false;
             iDIVAComboBox.Enabled = false;
             precioTextBox.ReadOnly = true;
-            imagenTextBox.ReadOnly = true;
+            //imagenTextBox.ReadOnly = true;
             iDMedidaComboBox.Enabled = false;
             medidaTextBox.ReadOnly = true;
             notasTextBox.ReadOnly = true;
@@ -118,20 +119,24 @@ namespace AplicacionComercial
         private void BindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
         {
             LlenarGrillas();
+            CargarImagen();
         }
 
         private void BindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
         {
+            CargarImagen();
             LlenarGrillas();
         }
 
         private void BindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
         {
+            CargarImagen();
             LlenarGrillas();
         }
 
         private void BindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
         {
+            CargarImagen();
             LlenarGrillas();
         }
 
@@ -139,6 +144,8 @@ namespace AplicacionComercial
         {
             HabilitarCampos();
             nuevo = false;
+            bindingNavigatorMovePreviousItem.Enabled = false;
+            CargarImagen();
         }
 
         private void CancelarToolStripButton_Click_1(object sender, EventArgs e)
@@ -157,6 +164,7 @@ namespace AplicacionComercial
             bindingNavigatorMoveFirstItem.Enabled = false;
             bindingNavigatorMovePreviousItem.Enabled = false;
             LlenarGrillas();
+            CargarImagen();
             //BodegasDataGridView.DataSource = null;
             //BarraDataGridView.DataSource = null;
         }
@@ -199,6 +207,28 @@ namespace AplicacionComercial
 
             }
             return true;
+        }
+
+        private void BuscarImagenButton_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+            imagenTextBox.Text = openFileDialog1.FileName;
+            CargarImagen();
+        }
+
+        private void CargarImagen()
+        {
+            if (imagenTextBox.Text == string.Empty)
+            {
+                ImagenPictureBox.Image=null;
+            }
+            else
+            {
+                if (File.Exists(imagenTextBox.Text))
+                {
+                   ImagenPictureBox.Load(imagenTextBox.Text);
+                }
+            }
         }
     }
 
