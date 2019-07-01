@@ -17,5 +17,10 @@ namespace CADAplicacionComercial
                 return true;
             }
         }
+
+        public static void InsertBarra(int IDProducto, long Barra)
+        {
+            adapter.InsertBarra(IDProducto, Barra);
+        }
     }
 }

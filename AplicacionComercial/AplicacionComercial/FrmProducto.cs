@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CADAplicacionComercial;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -77,7 +78,7 @@ namespace AplicacionComercial
             notasTextBox.ReadOnly = false;
 
             AgregarBarraButton.Enabled = true;
-            CancelarButton.Enabled = true;
+            EliminarButton.Enabled = true;
             AgregarBodegaButton.Enabled = true;
             BuscarImagenButton.Enabled = true;
 
@@ -109,7 +110,7 @@ namespace AplicacionComercial
             notasTextBox.ReadOnly = true;
 
             AgregarBarraButton.Enabled = false;
-            CancelarButton.Enabled = false;
+            EliminarButton.Enabled = false;
             AgregarBodegaButton.Enabled = false;
             BuscarImagenButton.Enabled = false;
         }
@@ -235,6 +236,9 @@ namespace AplicacionComercial
         {
             FrmBarra miBarra = new FrmBarra();
             miBarra.ShowDialog();
+            if (miBarra.Barra == 0) return;
+            CADBarra.InsertBarra(Convert.ToInt32(iDProductoTextBox.Text),miBarra.Barra);
+            this.barraTableAdapter.FillBy(this.dSAplicacionComercial.Barra, Convert.ToInt32(iDProductoTextBox.Text));
         }
     }
 

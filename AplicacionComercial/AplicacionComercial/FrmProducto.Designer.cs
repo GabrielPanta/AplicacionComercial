@@ -80,7 +80,7 @@
             this.BuscarImagenButton = new System.Windows.Forms.Button();
             this.ImagenPictureBox = new System.Windows.Forms.PictureBox();
             this.BarrasGroupBox = new System.Windows.Forms.GroupBox();
-            this.CancelarButton = new System.Windows.Forms.Button();
+            this.EliminarButton = new System.Windows.Forms.Button();
             this.CancelarBarraButton = new System.Windows.Forms.Button();
             this.AgregarBarraButton = new System.Windows.Forms.Button();
             this.BarraDataGridView = new System.Windows.Forms.DataGridView();
@@ -533,7 +533,7 @@
             // 
             // BarrasGroupBox
             // 
-            this.BarrasGroupBox.Controls.Add(this.CancelarButton);
+            this.BarrasGroupBox.Controls.Add(this.EliminarButton);
             this.BarrasGroupBox.Controls.Add(this.CancelarBarraButton);
             this.BarrasGroupBox.Controls.Add(this.AgregarBarraButton);
             this.BarrasGroupBox.Controls.Add(this.BarraDataGridView);
@@ -544,15 +544,15 @@
             this.BarrasGroupBox.TabStop = false;
             this.BarrasGroupBox.Text = "Codigos de Barras";
             // 
-            // CancelarButton
+            // EliminarButton
             // 
-            this.CancelarButton.Enabled = false;
-            this.CancelarButton.Location = new System.Drawing.Point(212, 23);
-            this.CancelarButton.Name = "CancelarButton";
-            this.CancelarButton.Size = new System.Drawing.Size(75, 23);
-            this.CancelarButton.TabIndex = 3;
-            this.CancelarButton.Text = "Cancelar";
-            this.CancelarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Enabled = false;
+            this.EliminarButton.Location = new System.Drawing.Point(198, 23);
+            this.EliminarButton.Name = "EliminarButton";
+            this.EliminarButton.Size = new System.Drawing.Size(90, 23);
+            this.EliminarButton.TabIndex = 3;
+            this.EliminarButton.Text = "Eliminar";
+            this.EliminarButton.UseVisualStyleBackColor = true;
             // 
             // CancelarBarraButton
             // 
@@ -566,9 +566,9 @@
             // AgregarBarraButton
             // 
             this.AgregarBarraButton.Enabled = false;
-            this.AgregarBarraButton.Location = new System.Drawing.Point(131, 23);
+            this.AgregarBarraButton.Location = new System.Drawing.Point(102, 23);
             this.AgregarBarraButton.Name = "AgregarBarraButton";
-            this.AgregarBarraButton.Size = new System.Drawing.Size(75, 23);
+            this.AgregarBarraButton.Size = new System.Drawing.Size(90, 23);
             this.AgregarBarraButton.TabIndex = 1;
             this.AgregarBarraButton.Text = "Agregar";
             this.AgregarBarraButton.UseVisualStyleBackColor = true;
@@ -1041,7 +1041,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadMinimaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDProductoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn barraDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button CancelarButton;
+        private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.BindingNavigator productoBindingNavigator;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;

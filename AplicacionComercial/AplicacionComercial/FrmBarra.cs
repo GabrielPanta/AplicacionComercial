@@ -13,11 +13,13 @@ namespace AplicacionComercial
 {
     public partial class FrmBarra : Form
     {
-        public long Barra;
+        private long barra=0;
         public FrmBarra()
         {
             InitializeComponent();
         }
+
+        public long Barra { get => barra; set => barra = value; }
 
         private void AceptarButton_Click(object sender, EventArgs e)
         {
@@ -30,10 +32,10 @@ namespace AplicacionComercial
             }
             errorProvider1.Clear();
 
-            
-            if(!long.TryParse(BarraTextBox.Text,out Barra))
+
+            if (!long.TryParse(BarraTextBox.Text, out barra))
             {
-               // MessageBox.Show("Debe Ingresar un Numero de Barra");
+                // MessageBox.Show("Debe Ingresar un Numero de Barra");
                 errorProvider1.SetError(BarraTextBox, "Debe Ingresar un Numero de Barra");
                 BarraTextBox.Focus();
                 return;
@@ -42,7 +44,7 @@ namespace AplicacionComercial
 
             if (CADBarra.ExisteBarra(Barra))
             {
-               // MessageBox.Show("Ya existe esa BARRA");
+                // MessageBox.Show("Ya existe esa BARRA");
                 errorProvider1.SetError(BarraTextBox, "Ya existe esa BARRA");
                 BarraTextBox.Focus();
                 return;
@@ -55,6 +57,13 @@ namespace AplicacionComercial
                 BarraTextBox.Focus();
                 return;
             }
+            this.Close();
+        }
+
+        private void CancelarButton_Click(object sender, EventArgs e)
+        {
+           Barra=0;
+            this.Close();
         }
     }
 }
