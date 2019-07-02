@@ -179,7 +179,16 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BarraTableAdapter = null;
+            this.tableAdapterManager.BodegaProductoTableAdapter = null;
+            this.tableAdapterManager.BodegaTableAdapter = null;
+            this.tableAdapterManager.DepartamentoTableAdapter = null;
+            this.tableAdapterManager.IVATableAdapter = null;
+            this.tableAdapterManager.MedidaTableAdapter = null;
+            this.tableAdapterManager.ProductoTableAdapter = null;
+            this.tableAdapterManager.ProveedorTableAdapter = null;
             this.tableAdapterManager.RolTableAdapter = null;
+            this.tableAdapterManager.TipoDocumentoTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = AplicacionComercial.DSAplicacionComercialTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuarioTableAdapter = this.usuarioTableAdapter;
             // 
@@ -338,6 +347,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Eliminar";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.BindingNavigatorDeleteItem_Click);
             // 
             // BuscartoolStripButton
             // 

@@ -179,6 +179,9 @@ namespace AplicacionComercial
             nuevo = true;            
         }
 
- 
+        private void BindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -22,5 +22,10 @@ namespace CADAplicacionComercial
         {
             adapter.InsertBarra(IDProducto, Barra);
         }
+
+        public static void DeleteBarra( long Barra)
+        {
+            adapter.DeleteBarra(Barra);
+        }
     }
 }

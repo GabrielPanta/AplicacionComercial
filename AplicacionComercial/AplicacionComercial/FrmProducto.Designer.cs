@@ -38,14 +38,14 @@
             System.Windows.Forms.Label iDMedidaLabel;
             System.Windows.Forms.Label medidaLabel;
             System.Windows.Forms.Label imagenLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProducto));
             this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dSAplicacionComercial = new AplicacionComercial.DSAplicacionComercial();
@@ -323,10 +323,10 @@
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Precio";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "C2";
-            dataGridViewCellStyle9.NullValue = null;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle17.Format = "C2";
+            dataGridViewCellStyle17.NullValue = null;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle17;
             this.dataGridViewTextBoxColumn5.FillWeight = 85.27921F;
             this.dataGridViewTextBoxColumn5.HeaderText = "Precio";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
@@ -374,10 +374,10 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "Medida";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomLeft;
-            dataGridViewCellStyle10.Format = "N2";
-            dataGridViewCellStyle10.NullValue = null;
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomLeft;
+            dataGridViewCellStyle18.Format = "N2";
+            dataGridViewCellStyle18.NullValue = null;
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle18;
             this.dataGridViewTextBoxColumn9.FillWeight = 85.27921F;
             this.dataGridViewTextBoxColumn9.HeaderText = "Medida";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
@@ -553,6 +553,7 @@
             this.EliminarButton.TabIndex = 3;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // CancelarBarraButton
             // 
@@ -603,8 +604,8 @@
             // barraDataGridViewTextBoxColumn
             // 
             this.barraDataGridViewTextBoxColumn.DataPropertyName = "Barra";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.barraDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.barraDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle19;
             this.barraDataGridViewTextBoxColumn.HeaderText = "Barra";
             this.barraDataGridViewTextBoxColumn.Name = "barraDataGridViewTextBoxColumn";
             this.barraDataGridViewTextBoxColumn.ReadOnly = true;
@@ -691,10 +692,10 @@
             // stockDataGridViewTextBoxColumn
             // 
             this.stockDataGridViewTextBoxColumn.DataPropertyName = "Stock";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle12.Format = "N2";
-            dataGridViewCellStyle12.NullValue = null;
-            this.stockDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle20.Format = "N2";
+            dataGridViewCellStyle20.NullValue = null;
+            this.stockDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle20;
             this.stockDataGridViewTextBoxColumn.HeaderText = "Stock";
             this.stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
             this.stockDataGridViewTextBoxColumn.ReadOnly = true;
@@ -702,10 +703,10 @@
             // minimoDataGridViewTextBoxColumn
             // 
             this.minimoDataGridViewTextBoxColumn.DataPropertyName = "Minimo";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle13.Format = "N2";
-            dataGridViewCellStyle13.NullValue = null;
-            this.minimoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle21.Format = "N2";
+            dataGridViewCellStyle21.NullValue = null;
+            this.minimoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle21;
             this.minimoDataGridViewTextBoxColumn.HeaderText = "Minimo";
             this.minimoDataGridViewTextBoxColumn.Name = "minimoDataGridViewTextBoxColumn";
             this.minimoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -713,10 +714,10 @@
             // maximoDataGridViewTextBoxColumn
             // 
             this.maximoDataGridViewTextBoxColumn.DataPropertyName = "Maximo";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.Format = "N2";
-            dataGridViewCellStyle14.NullValue = null;
-            this.maximoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle22.Format = "N2";
+            dataGridViewCellStyle22.NullValue = null;
+            this.maximoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle22;
             this.maximoDataGridViewTextBoxColumn.HeaderText = "Maximo";
             this.maximoDataGridViewTextBoxColumn.Name = "maximoDataGridViewTextBoxColumn";
             this.maximoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -724,8 +725,8 @@
             // diasReposicionDataGridViewTextBoxColumn
             // 
             this.diasReposicionDataGridViewTextBoxColumn.DataPropertyName = "DiasReposicion";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.diasReposicionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.diasReposicionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle23;
             this.diasReposicionDataGridViewTextBoxColumn.HeaderText = "Dias Reposicion";
             this.diasReposicionDataGridViewTextBoxColumn.Name = "diasReposicionDataGridViewTextBoxColumn";
             this.diasReposicionDataGridViewTextBoxColumn.ReadOnly = true;
@@ -733,9 +734,9 @@
             // cantidadMinimaDataGridViewTextBoxColumn
             // 
             this.cantidadMinimaDataGridViewTextBoxColumn.DataPropertyName = "CantidadMinima";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle16.Format = "N2";
-            this.cantidadMinimaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle24.Format = "N2";
+            this.cantidadMinimaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle24;
             this.cantidadMinimaDataGridViewTextBoxColumn.HeaderText = "Cantidad Minima";
             this.cantidadMinimaDataGridViewTextBoxColumn.Name = "cantidadMinimaDataGridViewTextBoxColumn";
             this.cantidadMinimaDataGridViewTextBoxColumn.ReadOnly = true;

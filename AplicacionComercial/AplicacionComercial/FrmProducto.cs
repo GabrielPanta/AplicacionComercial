@@ -240,6 +240,16 @@ namespace AplicacionComercial
             CADBarra.InsertBarra(Convert.ToInt32(iDProductoTextBox.Text),miBarra.Barra);
             this.barraTableAdapter.FillBy(this.dSAplicacionComercial.Barra, Convert.ToInt32(iDProductoTextBox.Text));
         }
+
+        private void EliminarButton_Click(object sender, EventArgs e)
+        {
+            DialogResult rspta = MessageBox.Show("¿Estas Seguro de Eliminar Barra del Producto", "Confirmacion",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (rspta == DialogResult.No) return;
+            long barra = (long)BarraDataGridView.Rows[barraBindingSource.Position].Cells[1].Value;
+            CADBarra.DeleteBarra(barra);
+            this.barraTableAdapter.FillBy(this.dSAplicacionComercial.Barra, Convert.ToInt32(iDProductoTextBox.Text));
+        }
     }
 
 }
