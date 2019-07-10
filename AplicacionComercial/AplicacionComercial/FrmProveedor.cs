@@ -36,28 +36,14 @@ namespace AplicacionComercial
 
         }
 
-        private void Telefono2TextBox_TextChanged(object sender, EventArgs e)
+        private void BuscarToolStripButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void IDTipoDocumentoLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DocumentoLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ApellidosContactoLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Telefono2Label_Click(object sender, EventArgs e)
-        {
+            FrmBuscarProveedor miProveedor = new FrmBuscarProveedor();
+            miProveedor.ShowDialog();
+            if (miProveedor.IdProveedor == 0) return;
+            //int position = proveedorBindingSource.Find("IdProveedor", miProveedor.IdProveedor);
+            //proveedorBindingSource.Position = position;
+            proveedorBindingSource.Position = proveedorBindingSource.Find("IdProveedor", miProveedor.IdProveedor);
 
         }
     }

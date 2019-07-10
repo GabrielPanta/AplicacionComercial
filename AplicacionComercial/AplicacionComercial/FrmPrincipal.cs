@@ -60,5 +60,11 @@ namespace AplicacionComercial
             ProductosToolStripMenuItem_Click( sender,  e);
         }
 
+        private void ComprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCompras miform = new FrmCompras();
+            miform.Show();
+            miform.MdiParent = this;
+        }
     }
 }
