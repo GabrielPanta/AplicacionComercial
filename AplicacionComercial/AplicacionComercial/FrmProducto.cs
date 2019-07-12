@@ -50,6 +50,7 @@ namespace AplicacionComercial
             // TODO: esta línea de código carga datos en la tabla 'dSAplicacionComercial.Barra' Puede moverla o quitarla según sea necesario.
             this.barraTableAdapter.FillBy(this.dSAplicacionComercial.Barra, Convert.ToInt32(iDProductoTextBox.Text));
             this.bodegaProductoTableAdapter.FillBy(this.dSAplicacionComercial.BodegaProducto, Convert.ToInt32(iDProductoTextBox.Text));
+   
         }
 
 
@@ -249,6 +250,16 @@ namespace AplicacionComercial
             long barra = (long)BarraDataGridView.Rows[barraBindingSource.Position].Cells[1].Value;
             CADBarra.DeleteBarra(barra);
             this.barraTableAdapter.FillBy(this.dSAplicacionComercial.Barra, Convert.ToInt32(iDProductoTextBox.Text));
+        }
+
+        private void BuscarToolStripButton_Click(object sender, EventArgs e)
+        {
+
+            FrmBuscarProducto miProducto = new FrmBuscarProducto();
+            miProducto.ShowDialog();
+            if (miProducto.IdProducto == 0) return;
+            productoBindingSource.Position = productoBindingSource.Find("IDProducto", miProducto.IdProducto);
+            CargarImagen();
         }
     }
 

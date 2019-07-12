@@ -60,6 +60,12 @@
     <Compile Include="FrmBarra.Designer.cs">
       <DependentUpon>FrmBarra.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBuscarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarProducto.Designer.cs">
+      <DependentUpon>FrmBuscarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmBuscarProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmBarra.resx">
       <DependentUpon>FrmBarra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarProducto.resx">
+      <DependentUpon>FrmBuscarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBuscarProveedor.resx">
       <DependentUpon>FrmBuscarProveedor.cs</DependentUpon>

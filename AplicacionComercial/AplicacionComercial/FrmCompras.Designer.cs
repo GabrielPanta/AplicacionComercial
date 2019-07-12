@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCompras));
+            this.ComprasDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ProveedorComboBox = new System.Windows.Forms.ComboBox();
@@ -49,20 +50,31 @@
             this.BuscarProductoButton = new System.Windows.Forms.Button();
             this.ProductoLabel = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CantidadTextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.PrecioTextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.DescuentoTextBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.AñadirButton = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ProductoPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSAplicacionComercial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bodegaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compraBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compraBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // ComprasDateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(91, 12);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 0;
+            this.ComprasDateTimePicker.Location = new System.Drawing.Point(91, 12);
+            this.ComprasDateTimePicker.Name = "ComprasDateTimePicker";
+            this.ComprasDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.ComprasDateTimePicker.TabIndex = 0;
             // 
             // label1
             // 
@@ -163,7 +175,7 @@
             // 
             this.ProductoTextBox.Location = new System.Drawing.Point(91, 92);
             this.ProductoTextBox.Name = "ProductoTextBox";
-            this.ProductoTextBox.Size = new System.Drawing.Size(288, 20);
+            this.ProductoTextBox.Size = new System.Drawing.Size(200, 20);
             this.ProductoTextBox.TabIndex = 7;
             this.ProductoTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ProductoTextBox_Validating);
             // 
@@ -179,7 +191,7 @@
             // 
             // BuscarProductoButton
             // 
-            this.BuscarProductoButton.Location = new System.Drawing.Point(404, 92);
+            this.BuscarProductoButton.Location = new System.Drawing.Point(323, 92);
             this.BuscarProductoButton.Name = "BuscarProductoButton";
             this.BuscarProductoButton.Size = new System.Drawing.Size(47, 21);
             this.BuscarProductoButton.TabIndex = 9;
@@ -191,7 +203,7 @@
             this.ProductoLabel.AutoSize = true;
             this.ProductoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductoLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.ProductoLabel.Location = new System.Drawing.Point(457, 96);
+            this.ProductoLabel.Location = new System.Drawing.Point(376, 96);
             this.ProductoLabel.Name = "ProductoLabel";
             this.ProductoLabel.Size = new System.Drawing.Size(70, 13);
             this.ProductoLabel.TabIndex = 10;
@@ -201,11 +213,97 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // CantidadTextBox
+            // 
+            this.CantidadTextBox.Location = new System.Drawing.Point(91, 118);
+            this.CantidadTextBox.Name = "CantidadTextBox";
+            this.CantidadTextBox.Size = new System.Drawing.Size(160, 20);
+            this.CantidadTextBox.TabIndex = 12;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(35, 121);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Cantidad";
+            // 
+            // PrecioTextBox
+            // 
+            this.PrecioTextBox.Location = new System.Drawing.Point(91, 144);
+            this.PrecioTextBox.Name = "PrecioTextBox";
+            this.PrecioTextBox.Size = new System.Drawing.Size(160, 20);
+            this.PrecioTextBox.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(48, 147);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Precio";
+            // 
+            // DescuentoTextBox
+            // 
+            this.DescuentoTextBox.Location = new System.Drawing.Point(91, 170);
+            this.DescuentoTextBox.Name = "DescuentoTextBox";
+            this.DescuentoTextBox.Size = new System.Drawing.Size(160, 20);
+            this.DescuentoTextBox.TabIndex = 16;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(25, 173);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(59, 13);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Descuento";
+            // 
+            // AñadirButton
+            // 
+            this.AñadirButton.Image = ((System.Drawing.Image)(resources.GetObject("AñadirButton.Image")));
+            this.AñadirButton.Location = new System.Drawing.Point(303, 121);
+            this.AñadirButton.Name = "AñadirButton";
+            this.AñadirButton.Size = new System.Drawing.Size(76, 65);
+            this.AñadirButton.TabIndex = 17;
+            this.AñadirButton.Text = "Añadir";
+            this.AñadirButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.AñadirButton.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(-1, 232);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(848, 221);
+            this.dataGridView1.TabIndex = 18;
+            // 
+            // ProductoPictureBox
+            // 
+            this.ProductoPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ProductoPictureBox.Location = new System.Drawing.Point(595, 12);
+            this.ProductoPictureBox.Name = "ProductoPictureBox";
+            this.ProductoPictureBox.Size = new System.Drawing.Size(238, 214);
+            this.ProductoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProductoPictureBox.TabIndex = 19;
+            this.ProductoPictureBox.TabStop = false;
+            // 
             // FrmCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(845, 450);
+            this.Controls.Add(this.ProductoPictureBox);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.AñadirButton);
+            this.Controls.Add(this.DescuentoTextBox);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.PrecioTextBox);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.CantidadTextBox);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.ProductoLabel);
             this.Controls.Add(this.BuscarProductoButton);
             this.Controls.Add(this.BuscarProveedorButton);
@@ -216,7 +314,7 @@
             this.Controls.Add(this.ProveedorComboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.ComprasDateTimePicker);
             this.Name = "FrmCompras";
             this.Text = "Compras";
             this.Load += new System.EventHandler(this.FrmCompras_Load);
@@ -226,6 +324,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.compraBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compraBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,7 +333,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker ComprasDateTimePicker;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox ProveedorComboBox;
@@ -253,5 +353,14 @@
         private System.Windows.Forms.Button BuscarProductoButton;
         private System.Windows.Forms.Label ProductoLabel;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.PictureBox ProductoPictureBox;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button AñadirButton;
+        private System.Windows.Forms.TextBox DescuentoTextBox;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox PrecioTextBox;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox CantidadTextBox;
+        private System.Windows.Forms.Label label5;
     }
 }

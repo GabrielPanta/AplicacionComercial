@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +27,9 @@ namespace AplicacionComercial
             this.compraTableAdapter.Fill(this.dSAplicacionComercial.Compra);
             // TODO: esta línea de código carga datos en la tabla 'dSAplicacionComercial.Proveedor' Puede moverla o quitarla según sea necesario.
             this.proveedorTableAdapter.FillBy(this.dSAplicacionComercial.Proveedor);
+            ComprasDateTimePicker.Value = DateTime.Now;
             ProveedorComboBox.SelectedValue= -1;
+            BodegaComboBox.SelectedValue = -1;
 
         }
 
@@ -74,10 +77,19 @@ namespace AplicacionComercial
             {
                 errorProvider1.SetError(ProductoTextBox, "Producto No existe");
                 ProductoLabel.Text = String.Empty;
+                ProductoPictureBox.Image = null;
             }
             else
             {
                 ProductoLabel.Text = miProducto.Descripcion;
+                if (!File.Exists(miProducto.Imagen))
+                {
+                    ProductoPictureBox.Image = null;
+                }
+                else
+                {
+                    ProductoPictureBox.Load (miProducto.Imagen);
+                }
             }
         }
     }

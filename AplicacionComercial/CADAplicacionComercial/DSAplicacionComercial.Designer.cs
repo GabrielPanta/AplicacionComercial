@@ -1596,7 +1596,7 @@ namespace CADAplicacionComercial {
                         return ((string)(this[this.tableProducto.ImagenColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Imagen\' de la tabla \'Producto\' es DBNull.", e);
+                        return "";
                     }
                 }
                 set {
