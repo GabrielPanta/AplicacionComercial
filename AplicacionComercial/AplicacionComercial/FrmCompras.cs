@@ -14,6 +14,8 @@ namespace AplicacionComercial
 {
     public partial class FrmCompras : Form
     {
+        List<DetalleCompra> misDetalles = new List<DetalleCompra>();
+        CADProducto ultimoProducto = null;
         public FrmCompras()
         {
             InitializeComponent();
@@ -28,8 +30,9 @@ namespace AplicacionComercial
             // TODO: esta línea de código carga datos en la tabla 'dSAplicacionComercial.Proveedor' Puede moverla o quitarla según sea necesario.
             this.proveedorTableAdapter.FillBy(this.dSAplicacionComercial.Proveedor);
             ComprasDateTimePicker.Value = DateTime.Now;
-            ProveedorComboBox.SelectedValue= -1;
+            ProveedorComboBox.SelectedValue = -1;
             BodegaComboBox.SelectedValue = -1;
+            DetalleDataGridView.DataSource = misDetalles;
 
         }
 
@@ -82,15 +85,114 @@ namespace AplicacionComercial
             else
             {
                 ProductoLabel.Text = miProducto.Descripcion;
+                ultimoProducto = miProducto;
                 if (!File.Exists(miProducto.Imagen))
                 {
                     ProductoPictureBox.Image = null;
                 }
                 else
                 {
-                    ProductoPictureBox.Load (miProducto.Imagen);
+                    ProductoPictureBox.Load(miProducto.Imagen);
                 }
             }
+        }
+
+        private void AñadirButton_Click(object sender, EventArgs e)
+        {
+            if (ultimoProducto == null)
+            {
+                errorProvider1.SetError(ProductoTextBox, "Debe ingresar un Producto");
+                ProductoTextBox.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (CantidadTextBox.Text == string.Empty)
+            {
+                errorProvider1.SetError(CantidadTextBox, "Debe Ingresar una Cantidad");
+                return;
+            }
+            errorProvider1.Clear();
+
+            float cantidad;
+            if (!float.TryParse(CantidadTextBox.Text, out cantidad))
+            {
+                errorProvider1.SetError(CantidadTextBox, "Debe ingresar un valor Numérico");
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (cantidad <= 0)
+            {
+                errorProvider1.SetError(CantidadTextBox, "Debe ingresar un valor Numérico mayor a 0");
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (CostoTextBox.Text == string.Empty)
+            {
+                errorProvider1.SetError(CostoTextBox, "Debe Ingresar un Costo");
+                return;
+            }
+            errorProvider1.Clear();
+
+            decimal costo;
+            if (!decimal.TryParse(CostoTextBox.Text, out costo))
+            {
+                errorProvider1.SetError(CostoTextBox, "Debe ingresar un valor Numérico");
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (costo <= 0)
+            {
+                errorProvider1.SetError(CostoTextBox, "Debe ingresar un valor Numérico mayor a 0");
+                return;
+            }
+            errorProvider1.Clear();
+
+            float descuento = 0;
+            if (DescuentoTextBox.Text != "")
+            {
+                 
+                if (!float.TryParse(DescuentoTextBox.Text, out descuento))
+                {
+                    errorProvider1.SetError(DescuentoTextBox, "Debe ingresar un valor Numérico");
+                    return;
+                }
+                errorProvider1.Clear();
+
+                if (descuento < 0)
+                {
+                    errorProvider1.SetError(DescuentoTextBox, "Debe ingresar un valor Numérico mayor a 0");
+                    return;
+                }
+                errorProvider1.Clear();
+            }
+           
+
+
+            DetalleCompra miDetalle = new DetalleCompra();
+            miDetalle.Cantidad = cantidad;
+            miDetalle.Costo = costo;
+            miDetalle.PorcentajeDescuento = descuento;
+            miDetalle.Descripcion = ultimoProducto.Descripcion;
+            miDetalle.IDProducto = ultimoProducto.IDProducto;
+            miDetalle.PorcentajeIVA = 0;
+
+            misDetalles.Add(miDetalle);
+            DetalleDataGridView.DataSource = null;
+            DetalleDataGridView.DataSource = misDetalles;
+
+        }
+
+        private void BuscarProductoButton_Click(object sender, EventArgs e)
+        {
+            FrmBuscarProducto miBusquedaProducto = new FrmBuscarProducto();
+            miBusquedaProducto.ShowDialog();
+            if (miBusquedaProducto.IdProducto == 0) return;
+            ProductoTextBox.Text = Convert.ToString(miBusquedaProducto.IdProducto);
+            ProductoTextBox_Validating(sender, new CancelEventArgs());
         }
     }
 }

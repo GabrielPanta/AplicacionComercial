@@ -52,12 +52,12 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.CantidadTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.PrecioTextBox = new System.Windows.Forms.TextBox();
+            this.CostoTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.DescuentoTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.AñadirButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DetalleDataGridView = new System.Windows.Forms.DataGridView();
             this.ProductoPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSAplicacionComercial)).BeginInit();
@@ -65,7 +65,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.compraBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compraBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -197,6 +197,7 @@
             this.BuscarProductoButton.TabIndex = 9;
             this.BuscarProductoButton.Text = "...";
             this.BuscarProductoButton.UseVisualStyleBackColor = true;
+            this.BuscarProductoButton.Click += new System.EventHandler(this.BuscarProductoButton_Click);
             // 
             // ProductoLabel
             // 
@@ -229,21 +230,21 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Cantidad";
             // 
-            // PrecioTextBox
+            // CostoTextBox
             // 
-            this.PrecioTextBox.Location = new System.Drawing.Point(91, 144);
-            this.PrecioTextBox.Name = "PrecioTextBox";
-            this.PrecioTextBox.Size = new System.Drawing.Size(160, 20);
-            this.PrecioTextBox.TabIndex = 14;
+            this.CostoTextBox.Location = new System.Drawing.Point(91, 144);
+            this.CostoTextBox.Name = "CostoTextBox";
+            this.CostoTextBox.Size = new System.Drawing.Size(160, 20);
+            this.CostoTextBox.TabIndex = 14;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(48, 147);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 13);
+            this.label6.Size = new System.Drawing.Size(34, 13);
             this.label6.TabIndex = 13;
-            this.label6.Text = "Precio";
+            this.label6.Text = "Costo";
             // 
             // DescuentoTextBox
             // 
@@ -255,30 +256,31 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 173);
+            this.label7.Location = new System.Drawing.Point(18, 173);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 13);
+            this.label7.Size = new System.Drawing.Size(67, 13);
             this.label7.TabIndex = 15;
-            this.label7.Text = "Descuento";
+            this.label7.Text = "%Descuento";
             // 
             // AñadirButton
             // 
             this.AñadirButton.Image = ((System.Drawing.Image)(resources.GetObject("AñadirButton.Image")));
-            this.AñadirButton.Location = new System.Drawing.Point(303, 121);
+            this.AñadirButton.Location = new System.Drawing.Point(280, 125);
             this.AñadirButton.Name = "AñadirButton";
             this.AñadirButton.Size = new System.Drawing.Size(76, 65);
             this.AñadirButton.TabIndex = 17;
             this.AñadirButton.Text = "Añadir";
             this.AñadirButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.AñadirButton.UseVisualStyleBackColor = true;
+            this.AñadirButton.Click += new System.EventHandler(this.AñadirButton_Click);
             // 
-            // dataGridView1
+            // DetalleDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-1, 232);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(848, 221);
-            this.dataGridView1.TabIndex = 18;
+            this.DetalleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DetalleDataGridView.Location = new System.Drawing.Point(-1, 232);
+            this.DetalleDataGridView.Name = "DetalleDataGridView";
+            this.DetalleDataGridView.Size = new System.Drawing.Size(848, 221);
+            this.DetalleDataGridView.TabIndex = 18;
             // 
             // ProductoPictureBox
             // 
@@ -296,11 +298,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(845, 450);
             this.Controls.Add(this.ProductoPictureBox);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DetalleDataGridView);
             this.Controls.Add(this.AñadirButton);
             this.Controls.Add(this.DescuentoTextBox);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.PrecioTextBox);
+            this.Controls.Add(this.CostoTextBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.CantidadTextBox);
             this.Controls.Add(this.label5);
@@ -324,7 +326,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.compraBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compraBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -354,11 +356,11 @@
         private System.Windows.Forms.Label ProductoLabel;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.PictureBox ProductoPictureBox;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DetalleDataGridView;
         private System.Windows.Forms.Button AñadirButton;
         private System.Windows.Forms.TextBox DescuentoTextBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox PrecioTextBox;
+        private System.Windows.Forms.TextBox CostoTextBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox CantidadTextBox;
         private System.Windows.Forms.Label label5;
