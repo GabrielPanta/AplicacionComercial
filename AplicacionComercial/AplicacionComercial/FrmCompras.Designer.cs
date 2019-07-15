@@ -175,13 +175,13 @@
             // 
             this.ProductoTextBox.Location = new System.Drawing.Point(91, 92);
             this.ProductoTextBox.Name = "ProductoTextBox";
-            this.ProductoTextBox.Size = new System.Drawing.Size(200, 20);
+            this.ProductoTextBox.Size = new System.Drawing.Size(160, 20);
             this.ProductoTextBox.TabIndex = 7;
             this.ProductoTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ProductoTextBox_Validating);
             // 
             // BuscarProveedorButton
             // 
-            this.BuscarProveedorButton.Location = new System.Drawing.Point(542, 38);
+            this.BuscarProveedorButton.Location = new System.Drawing.Point(528, 37);
             this.BuscarProveedorButton.Name = "BuscarProveedorButton";
             this.BuscarProveedorButton.Size = new System.Drawing.Size(47, 21);
             this.BuscarProveedorButton.TabIndex = 8;
@@ -191,7 +191,7 @@
             // 
             // BuscarProductoButton
             // 
-            this.BuscarProductoButton.Location = new System.Drawing.Point(323, 92);
+            this.BuscarProductoButton.Location = new System.Drawing.Point(280, 92);
             this.BuscarProductoButton.Name = "BuscarProductoButton";
             this.BuscarProductoButton.Size = new System.Drawing.Size(47, 21);
             this.BuscarProductoButton.TabIndex = 9;
@@ -204,7 +204,7 @@
             this.ProductoLabel.AutoSize = true;
             this.ProductoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductoLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.ProductoLabel.Location = new System.Drawing.Point(376, 96);
+            this.ProductoLabel.Location = new System.Drawing.Point(333, 96);
             this.ProductoLabel.Name = "ProductoLabel";
             this.ProductoLabel.Size = new System.Drawing.Size(70, 13);
             this.ProductoLabel.TabIndex = 10;
@@ -265,9 +265,9 @@
             // AñadirButton
             // 
             this.AñadirButton.Image = ((System.Drawing.Image)(resources.GetObject("AñadirButton.Image")));
-            this.AñadirButton.Location = new System.Drawing.Point(280, 125);
+            this.AñadirButton.Location = new System.Drawing.Point(280, 119);
             this.AñadirButton.Name = "AñadirButton";
-            this.AñadirButton.Size = new System.Drawing.Size(76, 65);
+            this.AñadirButton.Size = new System.Drawing.Size(64, 61);
             this.AñadirButton.TabIndex = 17;
             this.AñadirButton.Text = "Añadir";
             this.AñadirButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -276,9 +276,17 @@
             // 
             // DetalleDataGridView
             // 
-            this.DetalleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DetalleDataGridView.AllowUserToAddRows = false;
+            this.DetalleDataGridView.AllowUserToDeleteRows = false;
+            this.DetalleDataGridView.AllowUserToOrderColumns = true;
+            this.DetalleDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DetalleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.DetalleDataGridView.Enabled = false;
             this.DetalleDataGridView.Location = new System.Drawing.Point(-1, 232);
             this.DetalleDataGridView.Name = "DetalleDataGridView";
+            this.DetalleDataGridView.ReadOnly = true;
             this.DetalleDataGridView.Size = new System.Drawing.Size(848, 221);
             this.DetalleDataGridView.TabIndex = 18;
             // 

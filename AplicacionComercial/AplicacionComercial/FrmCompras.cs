@@ -154,7 +154,7 @@ namespace AplicacionComercial
             float descuento = 0;
             if (DescuentoTextBox.Text != "")
             {
-                 
+
                 if (!float.TryParse(DescuentoTextBox.Text, out descuento))
                 {
                     errorProvider1.SetError(DescuentoTextBox, "Debe ingresar un valor Numérico");
@@ -162,30 +162,80 @@ namespace AplicacionComercial
                 }
                 errorProvider1.Clear();
 
-                if (descuento < 0)
+                if (descuento < 0 && descuento <= 100)
                 {
-                    errorProvider1.SetError(DescuentoTextBox, "Debe ingresar un valor Numérico mayor a 0");
+                    errorProvider1.SetError(DescuentoTextBox, "Debe ingresar un valor Numérico mayor a 0 y menor e igual a 100");
                     return;
                 }
-                errorProvider1.Clear();
-            }
-           
 
+                errorProvider1.Clear();
+                descuento /= 100;
+            }
+
+
+            CADIVA miIVA = CADIVA.GetIVA(ultimoProducto.IDIVA);
 
             DetalleCompra miDetalle = new DetalleCompra();
+            miDetalle.IDProducto = ultimoProducto.IDProducto;
             miDetalle.Cantidad = cantidad;
             miDetalle.Costo = costo;
             miDetalle.PorcentajeDescuento = descuento;
             miDetalle.Descripcion = ultimoProducto.Descripcion;
-            miDetalle.IDProducto = ultimoProducto.IDProducto;
-            miDetalle.PorcentajeIVA = 0;
+            miDetalle.PorcentajeIVA = miIVA.Tarifa;
 
             misDetalles.Add(miDetalle);
+            RefrescarGrid();
+        }
+
+        private void RefrescarGrid()
+        {
             DetalleDataGridView.DataSource = null;
             DetalleDataGridView.DataSource = misDetalles;
+            PersonalizaGrid();
 
         }
 
+        private void PersonalizaGrid()
+        {
+            DetalleDataGridView.Columns["IDProducto"].HeaderText = "ID Producto";
+            DetalleDataGridView.Columns["IDProducto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight; 
+
+            DetalleDataGridView.Columns["Descripcion"].HeaderText = "Descripción";
+            DetalleDataGridView.Columns["Descripcion"].Width = 300;
+
+            DetalleDataGridView.Columns["Costo"].HeaderText = "Costo";
+            DetalleDataGridView.Columns["Costo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            DetalleDataGridView.Columns["Costo"].DefaultCellStyle.Format = "C2";
+
+            DetalleDataGridView.Columns["Cantidad"].HeaderText = "Cantidad";
+            DetalleDataGridView.Columns["Cantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            DetalleDataGridView.Columns["Cantidad"].DefaultCellStyle.Format = "N2";
+
+            DetalleDataGridView.Columns["PorcentajeIVA"].HeaderText = "Porcentaje IVA";
+            DetalleDataGridView.Columns["PorcentajeIVA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            DetalleDataGridView.Columns["PorcentajeIVA"].DefaultCellStyle.Format = "P2";
+
+            DetalleDataGridView.Columns["PorcentajeDescuento"].HeaderText = "Porcentaje Descuento";
+            DetalleDataGridView.Columns["PorcentajeDescuento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            DetalleDataGridView.Columns["PorcentajeDescuento"].DefaultCellStyle.Format = "P2";
+
+            DetalleDataGridView.Columns["ValorBruto"].HeaderText = "Valor Bruto";
+            DetalleDataGridView.Columns["ValorBruto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            DetalleDataGridView.Columns["ValorBruto"].DefaultCellStyle.Format = "C2";
+
+            DetalleDataGridView.Columns["ValorIVA"].HeaderText = "Valor IVA";
+            DetalleDataGridView.Columns["ValorIVA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            DetalleDataGridView.Columns["ValorIVA"].DefaultCellStyle.Format = "C2";
+
+            DetalleDataGridView.Columns["ValorDescuento"].HeaderText = "Valor Descuento";
+            DetalleDataGridView.Columns["ValorDescuento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            DetalleDataGridView.Columns["ValorDescuento"].DefaultCellStyle.Format = "C2";
+
+            DetalleDataGridView.Columns["ValorNeto"].HeaderText = "Valor Neto";
+            DetalleDataGridView.Columns["ValorNeto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            DetalleDataGridView.Columns["ValorNeto"].DefaultCellStyle.Format = "C2";
+
+        }
         private void BuscarProductoButton_Click(object sender, EventArgs e)
         {
             FrmBuscarProducto miBusquedaProducto = new FrmBuscarProducto();

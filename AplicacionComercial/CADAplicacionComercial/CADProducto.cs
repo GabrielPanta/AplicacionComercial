@@ -22,6 +22,7 @@ namespace CADAplicacionComercial
             if (miTabla.Rows.Count == 0) return miProducto;
             DSAplicacionComercial.ProductoRow miRegistro =(DSAplicacionComercial.ProductoRow) miTabla.Rows[0];
             miProducto = new CADProducto();
+            miProducto.IDProducto = miRegistro.IDProducto;
             miProducto.Descripcion = miRegistro.Descripcion;
             miProducto.IDDepartamento = miRegistro.IDDepartamento;
             miProducto.IDIVA = miRegistro.IDIVA;
@@ -39,6 +40,7 @@ namespace CADAplicacionComercial
             if (miTabla.Rows.Count == 0) return miProducto;
             DSAplicacionComercial.ProductoRow miRegistro = (DSAplicacionComercial.ProductoRow)miTabla.Rows[0];
             miProducto = new CADProducto();
+            miProducto.IDProducto = miRegistro.IDProducto;
             miProducto.Descripcion = miRegistro.Descripcion;
             miProducto.IDDepartamento = miRegistro.IDDepartamento;
             miProducto.IDIVA = miRegistro.IDIVA;

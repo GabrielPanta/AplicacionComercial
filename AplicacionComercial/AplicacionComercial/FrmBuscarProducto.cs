@@ -33,7 +33,7 @@ namespace AplicacionComercial
         private void FillByToolStripButton_Click(object sender, EventArgs e)
         {
             string idProducto;
-                string descripcion;
+            string descripcion;
             if (rbtContenga.Checked == true)
             {
                 idProducto = "%" + (iDProductoToolStripTextBox.Text) + "%";
@@ -68,6 +68,7 @@ namespace AplicacionComercial
             catch (System.Exception ex)
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
+                System.Windows.Forms.MessageBox.Show("error");
             }
 
         }
