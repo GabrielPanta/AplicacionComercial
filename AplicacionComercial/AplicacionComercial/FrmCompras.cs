@@ -16,6 +16,14 @@ namespace AplicacionComercial
     {
         List<DetalleCompra> misDetalles = new List<DetalleCompra>();
         CADProducto ultimoProducto = null;
+        private CADUsuario usuarioLogueado;
+        private decimal totalBruto = 0;
+        private decimal totalDescuento = 0;
+        private decimal totalIva = 0;
+        private decimal totalNeto = 0;
+
+        public CADUsuario UsuarioLogueado { get => usuarioLogueado; set => usuarioLogueado = value; }
+
         public FrmCompras()
         {
             InitializeComponent();
@@ -183,8 +191,19 @@ namespace AplicacionComercial
             miDetalle.Descripcion = ultimoProducto.Descripcion;
             miDetalle.PorcentajeIVA = miIVA.Tarifa;
 
+            totalBruto += miDetalle.ValorBruto;
+            totalDescuento += miDetalle.ValorDescuento;
+            totalIva+= miDetalle.ValorIVA;
+            totalNeto += miDetalle.ValorNeto;
+
             misDetalles.Add(miDetalle);
             RefrescarGrid();
+            ultimoProducto = null;
+            ProductoTextBox.Text = String.Empty;
+            CantidadTextBox.Text = String.Empty;
+            CostoTextBox.Text = String.Empty;
+            DescuentoTextBox.Text = String.Empty;
+            ProductoLabel.Text= "Producto...";
         }
 
         private void RefrescarGrid()
@@ -192,6 +211,10 @@ namespace AplicacionComercial
             DetalleDataGridView.DataSource = null;
             DetalleDataGridView.DataSource = misDetalles;
             PersonalizaGrid();
+            totalBrutoTextBox.Text = string.Format("{0:C2}",totalBruto);
+            totalIvaTextBox.Text = string.Format("{0:C2}", totalIva);
+            totalDescuentoTextBox.Text = string.Format("{0:C2}", totalDescuento);
+            totalNetoTextBox.Text = string.Format("{0:C2}", totalNeto);
 
         }
 
@@ -206,34 +229,42 @@ namespace AplicacionComercial
             DetalleDataGridView.Columns["Costo"].HeaderText = "Costo";
             DetalleDataGridView.Columns["Costo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             DetalleDataGridView.Columns["Costo"].DefaultCellStyle.Format = "C2";
+            DetalleDataGridView.Columns["Costo"].Width = 80;
 
             DetalleDataGridView.Columns["Cantidad"].HeaderText = "Cantidad";
             DetalleDataGridView.Columns["Cantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             DetalleDataGridView.Columns["Cantidad"].DefaultCellStyle.Format = "N2";
+            DetalleDataGridView.Columns["Cantidad"].Width = 80;
 
             DetalleDataGridView.Columns["PorcentajeIVA"].HeaderText = "Porcentaje IVA";
             DetalleDataGridView.Columns["PorcentajeIVA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             DetalleDataGridView.Columns["PorcentajeIVA"].DefaultCellStyle.Format = "P2";
+            DetalleDataGridView.Columns["PorcentajeIVA"].Width = 80;
 
             DetalleDataGridView.Columns["PorcentajeDescuento"].HeaderText = "Porcentaje Descuento";
             DetalleDataGridView.Columns["PorcentajeDescuento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             DetalleDataGridView.Columns["PorcentajeDescuento"].DefaultCellStyle.Format = "P2";
+            DetalleDataGridView.Columns["PorcentajeDescuento"].Width = 80;
 
             DetalleDataGridView.Columns["ValorBruto"].HeaderText = "Valor Bruto";
             DetalleDataGridView.Columns["ValorBruto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             DetalleDataGridView.Columns["ValorBruto"].DefaultCellStyle.Format = "C2";
+            DetalleDataGridView.Columns["ValorBruto"].Width = 80;
 
             DetalleDataGridView.Columns["ValorIVA"].HeaderText = "Valor IVA";
             DetalleDataGridView.Columns["ValorIVA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             DetalleDataGridView.Columns["ValorIVA"].DefaultCellStyle.Format = "C2";
+            DetalleDataGridView.Columns["ValorIVA"].Width = 80;
 
             DetalleDataGridView.Columns["ValorDescuento"].HeaderText = "Valor Descuento";
             DetalleDataGridView.Columns["ValorDescuento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             DetalleDataGridView.Columns["ValorDescuento"].DefaultCellStyle.Format = "C2";
+            DetalleDataGridView.Columns["ValorDescuento"].Width = 80;
 
             DetalleDataGridView.Columns["ValorNeto"].HeaderText = "Valor Neto";
             DetalleDataGridView.Columns["ValorNeto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             DetalleDataGridView.Columns["ValorNeto"].DefaultCellStyle.Format = "C2";
+            DetalleDataGridView.Columns["ValorNeto"].Width = 80;
 
         }
         private void BuscarProductoButton_Click(object sender, EventArgs e)
@@ -243,6 +274,45 @@ namespace AplicacionComercial
             if (miBusquedaProducto.IdProducto == 0) return;
             ProductoTextBox.Text = Convert.ToString(miBusquedaProducto.IdProducto);
             ProductoTextBox_Validating(sender, new CancelEventArgs());
+        }
+
+        private void GrabarButton_Click(object sender, EventArgs e)
+        {
+            if (ProveedorComboBox.SelectedIndex == -1) {
+                errorProvider1.SetError(ProveedorComboBox, "Dbe seleccionar un Proveedor");
+                ProveedorComboBox.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (BodegaComboBox.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(BodegaComboBox, "Dbe seleccionar una Bodega");
+                BodegaComboBox.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (misDetalles.Count == 0)
+            {
+                errorProvider1.SetError(ProductoTextBox, "Ingresar Productos en la compra");
+                ProductoTextBox.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
+            DialogResult rta = MessageBox.Show("¿Está seguro de grabar la compra?", "Confirmacion", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (DialogResult.No == rta) return;
+
+            //Grabamos Encabezado de  la Compra
+            int IDCompra = CADCompra.InsertCompra(ComprasDateTimePicker.Value,(int)ProveedorComboBox.SelectedValue,
+                (int)BodegaComboBox.SelectedValue);
+
+            //Grabamos detalle de la compra
+
+
+
         }
     }
 }

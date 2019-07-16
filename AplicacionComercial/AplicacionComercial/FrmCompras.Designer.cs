@@ -59,6 +59,13 @@
             this.AñadirButton = new System.Windows.Forms.Button();
             this.DetalleDataGridView = new System.Windows.Forms.DataGridView();
             this.ProductoPictureBox = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.totalIvaTextBox = new System.Windows.Forms.TextBox();
+            this.totalNetoTextBox = new System.Windows.Forms.TextBox();
+            this.totalDescuentoTextBox = new System.Windows.Forms.TextBox();
+            this.totalBrutoTextBox = new System.Windows.Forms.TextBox();
+            this.GrabarButton = new System.Windows.Forms.Button();
+            this.CancelarButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSAplicacionComercial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bodegaBindingSource)).BeginInit();
@@ -101,7 +108,7 @@
             this.ProveedorComboBox.FormattingEnabled = true;
             this.ProveedorComboBox.Location = new System.Drawing.Point(91, 38);
             this.ProveedorComboBox.Name = "ProveedorComboBox";
-            this.ProveedorComboBox.Size = new System.Drawing.Size(419, 21);
+            this.ProveedorComboBox.Size = new System.Drawing.Size(477, 21);
             this.ProveedorComboBox.TabIndex = 3;
             this.ProveedorComboBox.ValueMember = "IDProveedor";
             // 
@@ -122,7 +129,7 @@
             this.BodegaComboBox.FormattingEnabled = true;
             this.BodegaComboBox.Location = new System.Drawing.Point(91, 65);
             this.BodegaComboBox.Name = "BodegaComboBox";
-            this.BodegaComboBox.Size = new System.Drawing.Size(419, 21);
+            this.BodegaComboBox.Size = new System.Drawing.Size(477, 21);
             this.BodegaComboBox.TabIndex = 5;
             this.BodegaComboBox.ValueMember = "IDBodega";
             // 
@@ -181,7 +188,7 @@
             // 
             // BuscarProveedorButton
             // 
-            this.BuscarProveedorButton.Location = new System.Drawing.Point(528, 37);
+            this.BuscarProveedorButton.Location = new System.Drawing.Point(597, 38);
             this.BuscarProveedorButton.Name = "BuscarProveedorButton";
             this.BuscarProveedorButton.Size = new System.Drawing.Size(47, 21);
             this.BuscarProveedorButton.TabIndex = 8;
@@ -265,9 +272,9 @@
             // AñadirButton
             // 
             this.AñadirButton.Image = ((System.Drawing.Image)(resources.GetObject("AñadirButton.Image")));
-            this.AñadirButton.Location = new System.Drawing.Point(280, 119);
+            this.AñadirButton.Location = new System.Drawing.Point(280, 121);
             this.AñadirButton.Name = "AñadirButton";
-            this.AñadirButton.Size = new System.Drawing.Size(64, 61);
+            this.AñadirButton.Size = new System.Drawing.Size(75, 69);
             this.AñadirButton.TabIndex = 17;
             this.AñadirButton.Text = "Añadir";
             this.AñadirButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -284,27 +291,103 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DetalleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DetalleDataGridView.Enabled = false;
-            this.DetalleDataGridView.Location = new System.Drawing.Point(-1, 232);
+            this.DetalleDataGridView.Location = new System.Drawing.Point(-2, 239);
             this.DetalleDataGridView.Name = "DetalleDataGridView";
             this.DetalleDataGridView.ReadOnly = true;
-            this.DetalleDataGridView.Size = new System.Drawing.Size(848, 221);
+            this.DetalleDataGridView.Size = new System.Drawing.Size(983, 199);
             this.DetalleDataGridView.TabIndex = 18;
             // 
             // ProductoPictureBox
             // 
             this.ProductoPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ProductoPictureBox.Location = new System.Drawing.Point(595, 12);
+            this.ProductoPictureBox.Location = new System.Drawing.Point(688, 18);
             this.ProductoPictureBox.Name = "ProductoPictureBox";
-            this.ProductoPictureBox.Size = new System.Drawing.Size(238, 214);
+            this.ProductoPictureBox.Size = new System.Drawing.Size(237, 215);
             this.ProductoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ProductoPictureBox.TabIndex = 19;
             this.ProductoPictureBox.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(434, 447);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(42, 13);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Totales";
+            // 
+            // totalIvaTextBox
+            // 
+            this.totalIvaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.totalIvaTextBox.Location = new System.Drawing.Point(606, 444);
+            this.totalIvaTextBox.Name = "totalIvaTextBox";
+            this.totalIvaTextBox.ReadOnly = true;
+            this.totalIvaTextBox.Size = new System.Drawing.Size(118, 20);
+            this.totalIvaTextBox.TabIndex = 21;
+            // 
+            // totalNetoTextBox
+            // 
+            this.totalNetoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.totalNetoTextBox.Location = new System.Drawing.Point(854, 444);
+            this.totalNetoTextBox.Name = "totalNetoTextBox";
+            this.totalNetoTextBox.ReadOnly = true;
+            this.totalNetoTextBox.Size = new System.Drawing.Size(118, 20);
+            this.totalNetoTextBox.TabIndex = 22;
+            // 
+            // totalDescuentoTextBox
+            // 
+            this.totalDescuentoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.totalDescuentoTextBox.Location = new System.Drawing.Point(730, 444);
+            this.totalDescuentoTextBox.Name = "totalDescuentoTextBox";
+            this.totalDescuentoTextBox.ReadOnly = true;
+            this.totalDescuentoTextBox.Size = new System.Drawing.Size(118, 20);
+            this.totalDescuentoTextBox.TabIndex = 23;
+            // 
+            // totalBrutoTextBox
+            // 
+            this.totalBrutoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.totalBrutoTextBox.Location = new System.Drawing.Point(482, 444);
+            this.totalBrutoTextBox.Name = "totalBrutoTextBox";
+            this.totalBrutoTextBox.ReadOnly = true;
+            this.totalBrutoTextBox.Size = new System.Drawing.Size(118, 20);
+            this.totalBrutoTextBox.TabIndex = 24;
+            // 
+            // GrabarButton
+            // 
+            this.GrabarButton.Image = ((System.Drawing.Image)(resources.GetObject("GrabarButton.Image")));
+            this.GrabarButton.Location = new System.Drawing.Point(361, 121);
+            this.GrabarButton.Name = "GrabarButton";
+            this.GrabarButton.Size = new System.Drawing.Size(75, 69);
+            this.GrabarButton.TabIndex = 25;
+            this.GrabarButton.Text = "Grabar";
+            this.GrabarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.GrabarButton.UseVisualStyleBackColor = true;
+            this.GrabarButton.Click += new System.EventHandler(this.GrabarButton_Click);
+            // 
+            // CancelarButton
+            // 
+            this.CancelarButton.Image = ((System.Drawing.Image)(resources.GetObject("CancelarButton.Image")));
+            this.CancelarButton.Location = new System.Drawing.Point(442, 121);
+            this.CancelarButton.Name = "CancelarButton";
+            this.CancelarButton.Size = new System.Drawing.Size(75, 69);
+            this.CancelarButton.TabIndex = 26;
+            this.CancelarButton.Text = "Cancelar";
+            this.CancelarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.CancelarButton.UseVisualStyleBackColor = true;
             // 
             // FrmCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 450);
+            this.ClientSize = new System.Drawing.Size(979, 514);
+            this.Controls.Add(this.CancelarButton);
+            this.Controls.Add(this.GrabarButton);
+            this.Controls.Add(this.totalBrutoTextBox);
+            this.Controls.Add(this.totalDescuentoTextBox);
+            this.Controls.Add(this.totalNetoTextBox);
+            this.Controls.Add(this.totalIvaTextBox);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.ProductoPictureBox);
             this.Controls.Add(this.DetalleDataGridView);
             this.Controls.Add(this.AñadirButton);
@@ -372,5 +455,12 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox CantidadTextBox;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox totalDescuentoTextBox;
+        private System.Windows.Forms.TextBox totalNetoTextBox;
+        private System.Windows.Forms.TextBox totalIvaTextBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox totalBrutoTextBox;
+        private System.Windows.Forms.Button CancelarButton;
+        private System.Windows.Forms.Button GrabarButton;
     }
 }
