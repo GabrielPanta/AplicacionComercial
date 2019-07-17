@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CADBarra.cs" />
+    <Compile Include="CADBodegaProducto.cs" />
     <Compile Include="CADCompra.cs" />
     <Compile Include="CADIVA.cs" />
     <Compile Include="CADProducto.cs" />

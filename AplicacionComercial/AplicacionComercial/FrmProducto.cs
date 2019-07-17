@@ -207,6 +207,68 @@ namespace AplicacionComercial
                 }
                 errorProvider1.Clear();
 
+                if (iDIVAComboBox.SelectedIndex == -1)
+                {
+                    errorProvider1.SetError(iDIVAComboBox, "Debe Seleccionar una IVA");
+                    return false;
+                }
+                errorProvider1.Clear();
+
+                if (precioTextBox.Text == string.Empty)
+                {
+                    errorProvider1.SetError(precioTextBox, "Debe Ingresar Un Precio");
+                    return false;
+                }
+                errorProvider1.Clear();
+
+                decimal precio;
+                if(!decimal.TryParse(precioTextBox.Text ,out precio))
+                {
+                    errorProvider1.SetError(precioTextBox, "Debe Ingresar Un valor numerico en el Precio ");
+                    precioTextBox.Focus();
+                    return false;
+                }
+                errorProvider1.Clear();
+
+                if (precio <= 0)
+                {
+                    errorProvider1.SetError(precioTextBox, "Debe Ingresar Un valor numerico mayor a 0");
+                    precioTextBox.Focus();
+                    return false;
+                }
+                errorProvider1.Clear();
+
+                if (iDMedidaComboBox.SelectedIndex == -1)
+                {
+                    errorProvider1.SetError(iDMedidaComboBox, "Debe Seleccionar una unidad de medida");
+                    return false;
+                }
+                errorProvider1.Clear();
+
+                if (medidaTextBox.Text == string.Empty)
+                {
+                    errorProvider1.SetError(medidaTextBox, "Debe Ingresar Una medida");
+                    medidaTextBox.Focus();
+                    return false;
+                }
+                errorProvider1.Clear();
+
+                decimal medida;
+                if (!decimal.TryParse(medidaTextBox.Text, out medida))
+                {
+                    errorProvider1.SetError(medidaTextBox, "Debe Ingresar Un valor numerico en el Precio ");
+                    medidaTextBox.Focus();
+                    return false;
+                }
+                errorProvider1.Clear();
+
+                if (medida <= 0)
+                {
+                    errorProvider1.SetError(precioTextBox, "Debe Ingresar Un valor numerico mayor a 0");
+                    medidaTextBox.Focus();
+                    return false;
+                }
+                errorProvider1.Clear();
             }
             return true;
         }
@@ -260,6 +322,15 @@ namespace AplicacionComercial
             if (miProducto.IdProducto == 0) return;
             productoBindingSource.Position = productoBindingSource.Find("IDProducto", miProducto.IdProducto);
             CargarImagen();
+        }
+
+        private void AgregarBodegaButton_Click(object sender, EventArgs e)
+        {
+            FrmParametrosBodega miForm = new FrmParametrosBodega();
+            miForm.IDProducto = Convert.ToInt32(iDProductoTextBox.Text);
+            miForm.ShowDialog();
+            this.bodegaProductoTableAdapter.FillBy(this.dSAplicacionComercial.BodegaProducto, Convert.ToInt32
+                (iDProductoTextBox.Text));
         }
     }
 

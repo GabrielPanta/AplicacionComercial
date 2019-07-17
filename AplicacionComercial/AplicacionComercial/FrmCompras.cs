@@ -310,7 +310,10 @@ namespace AplicacionComercial
                 (int)BodegaComboBox.SelectedValue);
 
             //Grabamos detalle de la compra
+            foreach (DetalleCompra miDetalle in misDetalles)
+            {
 
+            }
 
 
         }
