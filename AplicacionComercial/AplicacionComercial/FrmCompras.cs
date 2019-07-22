@@ -305,17 +305,31 @@ namespace AplicacionComercial
                 MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
             if (DialogResult.No == rta) return;
 
-            //Grabamos Encabezado de  la Compra
-            int IDCompra = CADCompra.InsertCompra(ComprasDateTimePicker.Value,(int)ProveedorComboBox.SelectedValue,
-                (int)BodegaComboBox.SelectedValue);
+            int IDProveedor = (int)ProveedorComboBox.SelectedValue;
+            int IDBodega = (int)BodegaComboBox.SelectedValue;
 
+            //Grabamos Encabezado de  la Compra
+            int IDCompra = CADCompra.InsertCompra(ComprasDateTimePicker.Value,IDProveedor,IDBodega);
+            
             //Grabamos detalle de la compra
             foreach (DetalleCompra miDetalle in misDetalles)
             {
-
+                //Consultamos saldo del producto 
+                CADBodegaProducto miBodegaProducto = CADBodegaProducto.GetBodegaProductoByIDBodegaAndIDProducto
+                    (IDBodega, miDetalle.IDProducto);
+          
+                if (miBodegaProducto == null)
+                {
+                    CADBodegaProducto.GetBodegaProductoByIDBodegaAndIDProducto(IDBodega, miDetalle.IDProducto);
+                }
+                else
+                {
+                    CADCompra.AumentarStock(miDetalle.Cantidad, IDBodega, miDetalle.IDProducto);
+                }
             }
 
 
         }
+
     }
 }

@@ -300,9 +300,9 @@
             // ProductoPictureBox
             // 
             this.ProductoPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ProductoPictureBox.Location = new System.Drawing.Point(688, 18);
+            this.ProductoPictureBox.Location = new System.Drawing.Point(688, 4);
             this.ProductoPictureBox.Name = "ProductoPictureBox";
-            this.ProductoPictureBox.Size = new System.Drawing.Size(237, 215);
+            this.ProductoPictureBox.Size = new System.Drawing.Size(279, 229);
             this.ProductoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ProductoPictureBox.TabIndex = 19;
             this.ProductoPictureBox.TabStop = false;

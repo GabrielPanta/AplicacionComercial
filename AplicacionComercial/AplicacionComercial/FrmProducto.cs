@@ -332,6 +332,11 @@ namespace AplicacionComercial
             this.bodegaProductoTableAdapter.FillBy(this.dSAplicacionComercial.BodegaProducto, Convert.ToInt32
                 (iDProductoTextBox.Text));
         }
+
+        private void BarraDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
 }

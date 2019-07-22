@@ -15,5 +15,9 @@ namespace CADAplicacionComercial
         {
             return (int)adapter.InsertCompra(Fecha, IDProveedor, IDBodega);
         }
+        public static void AumentarStock(double Cantidad, int IDBodega, int IDProducto)
+        {
+            adapter.AumentarStock(Cantidad, IDBodega, IDProducto);
+        }
     }
 }

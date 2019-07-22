@@ -13,7 +13,7 @@ namespace AplicacionComercial
 {
     public partial class FrmBarra : Form
     {
-        private long barra=0;
+        private long barra = 0;
         public FrmBarra()
         {
             InitializeComponent();
@@ -51,7 +51,7 @@ namespace AplicacionComercial
             }
             errorProvider1.Clear();
 
-            if (Barra < 1000000)
+            if (Barra < 1000000 || Barra > 999999999)
             {
                 errorProvider1.SetError(BarraTextBox, "El Numero no corresponde a un numero de barra");
                 BarraTextBox.Focus();
@@ -62,7 +62,7 @@ namespace AplicacionComercial
 
         private void CancelarButton_Click(object sender, EventArgs e)
         {
-           Barra=0;
+            Barra = 0;
             this.Close();
         }
     }
