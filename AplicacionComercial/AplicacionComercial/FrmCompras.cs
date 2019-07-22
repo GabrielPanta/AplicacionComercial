@@ -193,7 +193,7 @@ namespace AplicacionComercial
 
             totalBruto += miDetalle.ValorBruto;
             totalDescuento += miDetalle.ValorDescuento;
-            totalIva+= miDetalle.ValorIVA;
+            totalIva += miDetalle.ValorIVA;
             totalNeto += miDetalle.ValorNeto;
 
             misDetalles.Add(miDetalle);
@@ -203,7 +203,7 @@ namespace AplicacionComercial
             CantidadTextBox.Text = String.Empty;
             CostoTextBox.Text = String.Empty;
             DescuentoTextBox.Text = String.Empty;
-            ProductoLabel.Text= "Producto...";
+            ProductoLabel.Text = "Producto...";
         }
 
         private void RefrescarGrid()
@@ -211,7 +211,7 @@ namespace AplicacionComercial
             DetalleDataGridView.DataSource = null;
             DetalleDataGridView.DataSource = misDetalles;
             PersonalizaGrid();
-            totalBrutoTextBox.Text = string.Format("{0:C2}",totalBruto);
+            totalBrutoTextBox.Text = string.Format("{0:C2}", totalBruto);
             totalIvaTextBox.Text = string.Format("{0:C2}", totalIva);
             totalDescuentoTextBox.Text = string.Format("{0:C2}", totalDescuento);
             totalNetoTextBox.Text = string.Format("{0:C2}", totalNeto);
@@ -221,50 +221,50 @@ namespace AplicacionComercial
         private void PersonalizaGrid()
         {
             DetalleDataGridView.Columns["IDProducto"].HeaderText = "ID Producto";
-            DetalleDataGridView.Columns["IDProducto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight; 
+            DetalleDataGridView.Columns["IDProducto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             DetalleDataGridView.Columns["Descripcion"].HeaderText = "Descripción";
-            DetalleDataGridView.Columns["Descripcion"].Width = 300;
+            DetalleDataGridView.Columns["Descripcion"].Width = 200;
 
             DetalleDataGridView.Columns["Costo"].HeaderText = "Costo";
             DetalleDataGridView.Columns["Costo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             DetalleDataGridView.Columns["Costo"].DefaultCellStyle.Format = "C2";
-            DetalleDataGridView.Columns["Costo"].Width = 80;
+            DetalleDataGridView.Columns["Costo"].Width = 120;
 
             DetalleDataGridView.Columns["Cantidad"].HeaderText = "Cantidad";
             DetalleDataGridView.Columns["Cantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             DetalleDataGridView.Columns["Cantidad"].DefaultCellStyle.Format = "N2";
-            DetalleDataGridView.Columns["Cantidad"].Width = 80;
+            DetalleDataGridView.Columns["Cantidad"].Width = 120;
 
             DetalleDataGridView.Columns["PorcentajeIVA"].HeaderText = "Porcentaje IVA";
             DetalleDataGridView.Columns["PorcentajeIVA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             DetalleDataGridView.Columns["PorcentajeIVA"].DefaultCellStyle.Format = "P2";
-            DetalleDataGridView.Columns["PorcentajeIVA"].Width = 80;
+            DetalleDataGridView.Columns["PorcentajeIVA"].Width = 120;
 
             DetalleDataGridView.Columns["PorcentajeDescuento"].HeaderText = "Porcentaje Descuento";
             DetalleDataGridView.Columns["PorcentajeDescuento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             DetalleDataGridView.Columns["PorcentajeDescuento"].DefaultCellStyle.Format = "P2";
-            DetalleDataGridView.Columns["PorcentajeDescuento"].Width = 80;
+            DetalleDataGridView.Columns["PorcentajeDescuento"].Width = 120;
 
             DetalleDataGridView.Columns["ValorBruto"].HeaderText = "Valor Bruto";
             DetalleDataGridView.Columns["ValorBruto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             DetalleDataGridView.Columns["ValorBruto"].DefaultCellStyle.Format = "C2";
-            DetalleDataGridView.Columns["ValorBruto"].Width = 80;
+            DetalleDataGridView.Columns["ValorBruto"].Width = 120;
 
             DetalleDataGridView.Columns["ValorIVA"].HeaderText = "Valor IVA";
             DetalleDataGridView.Columns["ValorIVA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             DetalleDataGridView.Columns["ValorIVA"].DefaultCellStyle.Format = "C2";
-            DetalleDataGridView.Columns["ValorIVA"].Width = 80;
+            DetalleDataGridView.Columns["ValorIVA"].Width = 120;
 
             DetalleDataGridView.Columns["ValorDescuento"].HeaderText = "Valor Descuento";
             DetalleDataGridView.Columns["ValorDescuento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             DetalleDataGridView.Columns["ValorDescuento"].DefaultCellStyle.Format = "C2";
-            DetalleDataGridView.Columns["ValorDescuento"].Width = 80;
+            DetalleDataGridView.Columns["ValorDescuento"].Width = 120;
 
             DetalleDataGridView.Columns["ValorNeto"].HeaderText = "Valor Neto";
             DetalleDataGridView.Columns["ValorNeto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             DetalleDataGridView.Columns["ValorNeto"].DefaultCellStyle.Format = "C2";
-            DetalleDataGridView.Columns["ValorNeto"].Width = 80;
+            DetalleDataGridView.Columns["ValorNeto"].Width = 120;
 
         }
         private void BuscarProductoButton_Click(object sender, EventArgs e)
@@ -278,7 +278,8 @@ namespace AplicacionComercial
 
         private void GrabarButton_Click(object sender, EventArgs e)
         {
-            if (ProveedorComboBox.SelectedIndex == -1) {
+            if (ProveedorComboBox.SelectedIndex == -1)
+            {
                 errorProvider1.SetError(ProveedorComboBox, "Dbe seleccionar un Proveedor");
                 ProveedorComboBox.Focus();
                 return;
@@ -309,26 +310,60 @@ namespace AplicacionComercial
             int IDBodega = (int)BodegaComboBox.SelectedValue;
 
             //Grabamos Encabezado de  la Compra
-            int IDCompra = CADCompra.InsertCompra(ComprasDateTimePicker.Value,IDProveedor,IDBodega);
-            
+            int IDCompra = CADCompra.InsertCompra(ComprasDateTimePicker.Value, IDProveedor, IDBodega);
+            DateTime Fecha = ComprasDateTimePicker.Value;
             //Grabamos detalle de la compra
             foreach (DetalleCompra miDetalle in misDetalles)
             {
-                //Consultamos saldo del producto 
+                //Actualixamos la tabla bodegaProducto 
                 CADBodegaProducto miBodegaProducto = CADBodegaProducto.GetBodegaProductoByIDBodegaAndIDProducto
                     (IDBodega, miDetalle.IDProducto);
-          
+
                 if (miBodegaProducto == null)
                 {
-                    CADBodegaProducto.GetBodegaProductoByIDBodegaAndIDProducto(IDBodega, miDetalle.IDProducto);
+                    CADBodegaProducto.UpdateBodegaProducto(IDBodega, miDetalle.IDProducto, 1, 1, 1, 1);
+                }
+                CADCompra.AumentarStock(miDetalle.Cantidad, IDBodega, miDetalle.IDProducto);
+
+                //Actualizamos el Kardex
+
+                CADKardex miKardex = CADKardex.UltimoKardex(IDBodega, miDetalle.IDProducto);
+
+                int IDKardex;
+                float nuevoSaldo;
+                decimal nuevoCostoPromedio;
+
+                if (miKardex == null)
+                {
+                    nuevoSaldo = miDetalle.Cantidad;
+                    nuevoCostoPromedio = miDetalle.Costo;
                 }
                 else
                 {
-                    CADCompra.AumentarStock(miDetalle.Cantidad, IDBodega, miDetalle.IDProducto);
+                    nuevoSaldo = miKardex.Saldo + miDetalle.Cantidad;
+                    nuevoCostoPromedio =
+                   ( miKardex.CostoPromedio * (decimal)miKardex.Saldo+miDetalle.Costo* (decimal)miDetalle.Cantidad)/(decimal)nuevoSaldo;
                 }
+
+                IDKardex = CADKardex.InsertKardex(IDBodega, miDetalle.IDProducto, Fecha,
+                        string.Format("CO-{0}", IDCompra), miDetalle.Cantidad, 0, nuevoSaldo,
+                        miDetalle.Costo,nuevoCostoPromedio);
+
+                //Actulaizamos CompraDetalle
+                CADCompraDetalle.InsertCompraDetalle(IDCompra, miDetalle.IDProducto, miDetalle.Descripcion, miDetalle.Costo,
+                    miDetalle.Cantidad, IDKardex, miDetalle.PorcentajeIVA, miDetalle.PorcentajeDescuento);
             }
 
-
+            MessageBox.Show(string.Format("Lacompra: {0}, fue grabada de forma exitosa",IDCompra, MessageBoxButtons.OK, MessageBoxIcon.Exclamation));
+            totalBruto = 0;
+            totalDescuento = 0;
+            totalIva = 0;
+            totalNeto = 0;
+            ProveedorComboBox.SelectedIndex = -1;
+            BodegaComboBox.SelectedIndex = -1;
+            misDetalles.Clear();
+            RefrescarGrid();
+            ProveedorComboBox.Focus(); 
         }
 
     }

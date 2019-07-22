@@ -44,7 +44,9 @@
     <Compile Include="CADBarra.cs" />
     <Compile Include="CADBodegaProducto.cs" />
     <Compile Include="CADCompra.cs" />
+    <Compile Include="CADCompraDetalle.cs" />
     <Compile Include="CADIVA.cs" />
+    <Compile Include="CADKardex.cs" />
     <Compile Include="CADProducto.cs" />
     <Compile Include="CADUsuario.cs" />
     <Compile Include="DetalleCompra.cs" />
