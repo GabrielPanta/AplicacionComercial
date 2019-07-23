@@ -66,6 +66,8 @@
             this.totalBrutoTextBox = new System.Windows.Forms.TextBox();
             this.GrabarButton = new System.Windows.Forms.Button();
             this.CancelarButton = new System.Windows.Forms.Button();
+            this.BorrarTodoButton = new System.Windows.Forms.Button();
+            this.BorrarLineaButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSAplicacionComercial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bodegaBindingSource)).BeginInit();
@@ -78,7 +80,7 @@
             // 
             // ComprasDateTimePicker
             // 
-            this.ComprasDateTimePicker.Location = new System.Drawing.Point(91, 12);
+            this.ComprasDateTimePicker.Location = new System.Drawing.Point(107, 29);
             this.ComprasDateTimePicker.Name = "ComprasDateTimePicker";
             this.ComprasDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.ComprasDateTimePicker.TabIndex = 0;
@@ -86,7 +88,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 18);
+            this.label1.Location = new System.Drawing.Point(64, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 1;
@@ -95,7 +97,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 41);
+            this.label2.Location = new System.Drawing.Point(45, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 2;
@@ -106,7 +108,7 @@
             this.ProveedorComboBox.DataSource = this.proveedorBindingSource;
             this.ProveedorComboBox.DisplayMember = "Nombre";
             this.ProveedorComboBox.FormattingEnabled = true;
-            this.ProveedorComboBox.Location = new System.Drawing.Point(91, 38);
+            this.ProveedorComboBox.Location = new System.Drawing.Point(107, 55);
             this.ProveedorComboBox.Name = "ProveedorComboBox";
             this.ProveedorComboBox.Size = new System.Drawing.Size(477, 21);
             this.ProveedorComboBox.TabIndex = 3;
@@ -127,7 +129,7 @@
             this.BodegaComboBox.DataSource = this.bodegaBindingSource;
             this.BodegaComboBox.DisplayMember = "Descripcion";
             this.BodegaComboBox.FormattingEnabled = true;
-            this.BodegaComboBox.Location = new System.Drawing.Point(91, 65);
+            this.BodegaComboBox.Location = new System.Drawing.Point(107, 82);
             this.BodegaComboBox.Name = "BodegaComboBox";
             this.BodegaComboBox.Size = new System.Drawing.Size(477, 21);
             this.BodegaComboBox.TabIndex = 5;
@@ -141,7 +143,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 68);
+            this.label3.Location = new System.Drawing.Point(57, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 4;
@@ -172,7 +174,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 95);
+            this.label4.Location = new System.Drawing.Point(51, 112);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 13);
             this.label4.TabIndex = 6;
@@ -180,7 +182,7 @@
             // 
             // ProductoTextBox
             // 
-            this.ProductoTextBox.Location = new System.Drawing.Point(91, 92);
+            this.ProductoTextBox.Location = new System.Drawing.Point(107, 109);
             this.ProductoTextBox.Name = "ProductoTextBox";
             this.ProductoTextBox.Size = new System.Drawing.Size(160, 20);
             this.ProductoTextBox.TabIndex = 7;
@@ -188,7 +190,7 @@
             // 
             // BuscarProveedorButton
             // 
-            this.BuscarProveedorButton.Location = new System.Drawing.Point(597, 38);
+            this.BuscarProveedorButton.Location = new System.Drawing.Point(613, 55);
             this.BuscarProveedorButton.Name = "BuscarProveedorButton";
             this.BuscarProveedorButton.Size = new System.Drawing.Size(47, 21);
             this.BuscarProveedorButton.TabIndex = 8;
@@ -198,7 +200,7 @@
             // 
             // BuscarProductoButton
             // 
-            this.BuscarProductoButton.Location = new System.Drawing.Point(280, 92);
+            this.BuscarProductoButton.Location = new System.Drawing.Point(296, 109);
             this.BuscarProductoButton.Name = "BuscarProductoButton";
             this.BuscarProductoButton.Size = new System.Drawing.Size(47, 21);
             this.BuscarProductoButton.TabIndex = 9;
@@ -211,7 +213,7 @@
             this.ProductoLabel.AutoSize = true;
             this.ProductoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductoLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.ProductoLabel.Location = new System.Drawing.Point(333, 96);
+            this.ProductoLabel.Location = new System.Drawing.Point(349, 113);
             this.ProductoLabel.Name = "ProductoLabel";
             this.ProductoLabel.Size = new System.Drawing.Size(70, 13);
             this.ProductoLabel.TabIndex = 10;
@@ -223,7 +225,7 @@
             // 
             // CantidadTextBox
             // 
-            this.CantidadTextBox.Location = new System.Drawing.Point(91, 118);
+            this.CantidadTextBox.Location = new System.Drawing.Point(107, 135);
             this.CantidadTextBox.Name = "CantidadTextBox";
             this.CantidadTextBox.Size = new System.Drawing.Size(160, 20);
             this.CantidadTextBox.TabIndex = 12;
@@ -231,7 +233,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(35, 121);
+            this.label5.Location = new System.Drawing.Point(51, 138);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 11;
@@ -239,7 +241,7 @@
             // 
             // CostoTextBox
             // 
-            this.CostoTextBox.Location = new System.Drawing.Point(91, 144);
+            this.CostoTextBox.Location = new System.Drawing.Point(107, 161);
             this.CostoTextBox.Name = "CostoTextBox";
             this.CostoTextBox.Size = new System.Drawing.Size(160, 20);
             this.CostoTextBox.TabIndex = 14;
@@ -247,7 +249,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(48, 147);
+            this.label6.Location = new System.Drawing.Point(64, 164);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(34, 13);
             this.label6.TabIndex = 13;
@@ -255,7 +257,7 @@
             // 
             // DescuentoTextBox
             // 
-            this.DescuentoTextBox.Location = new System.Drawing.Point(91, 170);
+            this.DescuentoTextBox.Location = new System.Drawing.Point(107, 187);
             this.DescuentoTextBox.Name = "DescuentoTextBox";
             this.DescuentoTextBox.Size = new System.Drawing.Size(160, 20);
             this.DescuentoTextBox.TabIndex = 16;
@@ -263,7 +265,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(18, 173);
+            this.label7.Location = new System.Drawing.Point(34, 190);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 13);
             this.label7.TabIndex = 15;
@@ -272,7 +274,7 @@
             // AñadirButton
             // 
             this.AñadirButton.Image = ((System.Drawing.Image)(resources.GetObject("AñadirButton.Image")));
-            this.AñadirButton.Location = new System.Drawing.Point(280, 121);
+            this.AñadirButton.Location = new System.Drawing.Point(296, 151);
             this.AñadirButton.Name = "AñadirButton";
             this.AñadirButton.Size = new System.Drawing.Size(75, 69);
             this.AñadirButton.TabIndex = 17;
@@ -290,19 +292,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DetalleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.DetalleDataGridView.Enabled = false;
-            this.DetalleDataGridView.Location = new System.Drawing.Point(-2, 239);
+            this.DetalleDataGridView.Location = new System.Drawing.Point(-4, 226);
             this.DetalleDataGridView.Name = "DetalleDataGridView";
             this.DetalleDataGridView.ReadOnly = true;
-            this.DetalleDataGridView.Size = new System.Drawing.Size(983, 199);
+            this.DetalleDataGridView.Size = new System.Drawing.Size(983, 239);
             this.DetalleDataGridView.TabIndex = 18;
             // 
             // ProductoPictureBox
             // 
             this.ProductoPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ProductoPictureBox.Location = new System.Drawing.Point(688, 4);
+            this.ProductoPictureBox.Location = new System.Drawing.Point(705, 4);
             this.ProductoPictureBox.Name = "ProductoPictureBox";
-            this.ProductoPictureBox.Size = new System.Drawing.Size(279, 229);
+            this.ProductoPictureBox.Size = new System.Drawing.Size(262, 216);
             this.ProductoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ProductoPictureBox.TabIndex = 19;
             this.ProductoPictureBox.TabStop = false;
@@ -311,7 +312,7 @@
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(434, 447);
+            this.label8.Location = new System.Drawing.Point(429, 474);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(42, 13);
             this.label8.TabIndex = 20;
@@ -320,7 +321,7 @@
             // totalIvaTextBox
             // 
             this.totalIvaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.totalIvaTextBox.Location = new System.Drawing.Point(606, 444);
+            this.totalIvaTextBox.Location = new System.Drawing.Point(601, 471);
             this.totalIvaTextBox.Name = "totalIvaTextBox";
             this.totalIvaTextBox.ReadOnly = true;
             this.totalIvaTextBox.Size = new System.Drawing.Size(118, 20);
@@ -329,7 +330,7 @@
             // totalNetoTextBox
             // 
             this.totalNetoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.totalNetoTextBox.Location = new System.Drawing.Point(854, 444);
+            this.totalNetoTextBox.Location = new System.Drawing.Point(849, 471);
             this.totalNetoTextBox.Name = "totalNetoTextBox";
             this.totalNetoTextBox.ReadOnly = true;
             this.totalNetoTextBox.Size = new System.Drawing.Size(118, 20);
@@ -338,7 +339,7 @@
             // totalDescuentoTextBox
             // 
             this.totalDescuentoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.totalDescuentoTextBox.Location = new System.Drawing.Point(730, 444);
+            this.totalDescuentoTextBox.Location = new System.Drawing.Point(725, 471);
             this.totalDescuentoTextBox.Name = "totalDescuentoTextBox";
             this.totalDescuentoTextBox.ReadOnly = true;
             this.totalDescuentoTextBox.Size = new System.Drawing.Size(118, 20);
@@ -347,7 +348,7 @@
             // totalBrutoTextBox
             // 
             this.totalBrutoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.totalBrutoTextBox.Location = new System.Drawing.Point(482, 444);
+            this.totalBrutoTextBox.Location = new System.Drawing.Point(477, 471);
             this.totalBrutoTextBox.Name = "totalBrutoTextBox";
             this.totalBrutoTextBox.ReadOnly = true;
             this.totalBrutoTextBox.Size = new System.Drawing.Size(118, 20);
@@ -356,7 +357,7 @@
             // GrabarButton
             // 
             this.GrabarButton.Image = ((System.Drawing.Image)(resources.GetObject("GrabarButton.Image")));
-            this.GrabarButton.Location = new System.Drawing.Point(361, 121);
+            this.GrabarButton.Location = new System.Drawing.Point(377, 151);
             this.GrabarButton.Name = "GrabarButton";
             this.GrabarButton.Size = new System.Drawing.Size(75, 69);
             this.GrabarButton.TabIndex = 25;
@@ -368,7 +369,7 @@
             // CancelarButton
             // 
             this.CancelarButton.Image = ((System.Drawing.Image)(resources.GetObject("CancelarButton.Image")));
-            this.CancelarButton.Location = new System.Drawing.Point(442, 121);
+            this.CancelarButton.Location = new System.Drawing.Point(458, 151);
             this.CancelarButton.Name = "CancelarButton";
             this.CancelarButton.Size = new System.Drawing.Size(75, 69);
             this.CancelarButton.TabIndex = 26;
@@ -376,11 +377,37 @@
             this.CancelarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.CancelarButton.UseVisualStyleBackColor = true;
             // 
+            // BorrarTodoButton
+            // 
+            this.BorrarTodoButton.Image = ((System.Drawing.Image)(resources.GetObject("BorrarTodoButton.Image")));
+            this.BorrarTodoButton.Location = new System.Drawing.Point(620, 151);
+            this.BorrarTodoButton.Name = "BorrarTodoButton";
+            this.BorrarTodoButton.Size = new System.Drawing.Size(75, 69);
+            this.BorrarTodoButton.TabIndex = 28;
+            this.BorrarTodoButton.Text = "Borrar Todo";
+            this.BorrarTodoButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BorrarTodoButton.UseVisualStyleBackColor = true;
+            this.BorrarTodoButton.Click += new System.EventHandler(this.BorrarTodoButton_Click);
+            // 
+            // BorrarLineaButton
+            // 
+            this.BorrarLineaButton.Image = ((System.Drawing.Image)(resources.GetObject("BorrarLineaButton.Image")));
+            this.BorrarLineaButton.Location = new System.Drawing.Point(539, 151);
+            this.BorrarLineaButton.Name = "BorrarLineaButton";
+            this.BorrarLineaButton.Size = new System.Drawing.Size(75, 69);
+            this.BorrarLineaButton.TabIndex = 27;
+            this.BorrarLineaButton.Text = "Borrar Línea";
+            this.BorrarLineaButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BorrarLineaButton.UseVisualStyleBackColor = true;
+            this.BorrarLineaButton.Click += new System.EventHandler(this.BorrarLineaButton_Click);
+            // 
             // FrmCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(979, 514);
+            this.Controls.Add(this.BorrarTodoButton);
+            this.Controls.Add(this.BorrarLineaButton);
             this.Controls.Add(this.CancelarButton);
             this.Controls.Add(this.GrabarButton);
             this.Controls.Add(this.totalBrutoTextBox);
@@ -410,6 +437,7 @@
             this.Controls.Add(this.ComprasDateTimePicker);
             this.Name = "FrmCompras";
             this.Text = "Compras";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmCompras_FormClosing);
             this.Load += new System.EventHandler(this.FrmCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSAplicacionComercial)).EndInit();
@@ -462,5 +490,7 @@
         private System.Windows.Forms.TextBox totalBrutoTextBox;
         private System.Windows.Forms.Button CancelarButton;
         private System.Windows.Forms.Button GrabarButton;
+        private System.Windows.Forms.Button BorrarTodoButton;
+        private System.Windows.Forms.Button BorrarLineaButton;
     }
 }

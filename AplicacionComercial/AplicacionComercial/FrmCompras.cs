@@ -16,13 +16,7 @@ namespace AplicacionComercial
     {
         List<DetalleCompra> misDetalles = new List<DetalleCompra>();
         CADProducto ultimoProducto = null;
-        private CADUsuario usuarioLogueado;
-        private decimal totalBruto = 0;
-        private decimal totalDescuento = 0;
-        private decimal totalIva = 0;
-        private decimal totalNeto = 0;
 
-        public CADUsuario UsuarioLogueado { get => usuarioLogueado; set => usuarioLogueado = value; }
 
         public FrmCompras()
         {
@@ -41,6 +35,7 @@ namespace AplicacionComercial
             ProveedorComboBox.SelectedValue = -1;
             BodegaComboBox.SelectedValue = -1;
             DetalleDataGridView.DataSource = misDetalles;
+            PersonalizaGrid();
 
         }
 
@@ -191,10 +186,6 @@ namespace AplicacionComercial
             miDetalle.Descripcion = ultimoProducto.Descripcion;
             miDetalle.PorcentajeIVA = miIVA.Tarifa;
 
-            totalBruto += miDetalle.ValorBruto;
-            totalDescuento += miDetalle.ValorDescuento;
-            totalIva += miDetalle.ValorIVA;
-            totalNeto += miDetalle.ValorNeto;
 
             misDetalles.Add(miDetalle);
             RefrescarGrid();
@@ -210,6 +201,20 @@ namespace AplicacionComercial
         {
             DetalleDataGridView.DataSource = null;
             DetalleDataGridView.DataSource = misDetalles;
+
+            decimal totalBruto = 0;
+            decimal totalDescuento = 0;
+            decimal totalIva = 0;
+            decimal totalNeto = 0;
+
+            foreach (DetalleCompra miDetalle in misDetalles)
+            {
+                totalBruto += miDetalle.ValorBruto;
+                totalDescuento += miDetalle.ValorDescuento;
+                totalIva += miDetalle.ValorIVA;
+                totalNeto += miDetalle.ValorNeto;
+            }
+
             PersonalizaGrid();
             totalBrutoTextBox.Text = string.Format("{0:C2}", totalBruto);
             totalIvaTextBox.Text = string.Format("{0:C2}", totalIva);
@@ -302,7 +307,7 @@ namespace AplicacionComercial
             }
             errorProvider1.Clear();
 
-            DialogResult rta = MessageBox.Show("¿Está seguro de grabar la compra?", "Confirmacion", MessageBoxButtons.YesNo,
+            DialogResult rta = MessageBox.Show("¿Está seguro de grabar la compra?", "Confirmació n", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
             if (DialogResult.No == rta) return;
 
@@ -342,29 +347,58 @@ namespace AplicacionComercial
                 {
                     nuevoSaldo = miKardex.Saldo + miDetalle.Cantidad;
                     nuevoCostoPromedio =
-                   ( miKardex.CostoPromedio * (decimal)miKardex.Saldo+miDetalle.Costo* (decimal)miDetalle.Cantidad)/(decimal)nuevoSaldo;
+                   (miKardex.CostoPromedio * (decimal)miKardex.Saldo + miDetalle.Costo * (decimal)miDetalle.Cantidad) / (decimal)nuevoSaldo;
                 }
 
                 IDKardex = CADKardex.InsertKardex(IDBodega, miDetalle.IDProducto, Fecha,
                         string.Format("CO-{0}", IDCompra), miDetalle.Cantidad, 0, nuevoSaldo,
-                        miDetalle.Costo,nuevoCostoPromedio);
+                        miDetalle.Costo, nuevoCostoPromedio);
 
                 //Actulaizamos CompraDetalle
                 CADCompraDetalle.InsertCompraDetalle(IDCompra, miDetalle.IDProducto, miDetalle.Descripcion, miDetalle.Costo,
                     miDetalle.Cantidad, IDKardex, miDetalle.PorcentajeIVA, miDetalle.PorcentajeDescuento);
             }
 
-            MessageBox.Show(string.Format("Lacompra: {0}, fue grabada de forma exitosa",IDCompra, MessageBoxButtons.OK, MessageBoxIcon.Exclamation));
-            totalBruto = 0;
-            totalDescuento = 0;
-            totalIva = 0;
-            totalNeto = 0;
+            MessageBox.Show(string.Format("Lacompra: {0}, fue grabada de forma exitosa", IDCompra, MessageBoxButtons.OK, MessageBoxIcon.Exclamation));
+
             ProveedorComboBox.SelectedIndex = -1;
             BodegaComboBox.SelectedIndex = -1;
             misDetalles.Clear();
             RefrescarGrid();
-            ProveedorComboBox.Focus(); 
+            ProveedorComboBox.Focus();
         }
 
+        private void BorrarTodoButton_Click(object sender, EventArgs e)
+        {
+            if (DetalleDataGridView.Rows.Count == 0) return;
+            DialogResult rta = MessageBox.Show("¿Estás Seguro de Borrar los registros ingresados", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (DialogResult.No == rta) return;
+            misDetalles.Clear();
+            RefrescarGrid();
+            ProductoPictureBox.Image = null;
+        }
+
+        private void BorrarLineaButton_Click(object sender, EventArgs e)
+        {
+            if (DetalleDataGridView.Rows.Count == 0) return;
+            if (DetalleDataGridView.SelectedRows.Count == 0)
+            {
+                misDetalles.RemoveAt(misDetalles.Count - 1);
+                RefrescarGrid();
+            }
+        }
+
+        private void FrmCompras_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (DetalleDataGridView.Rows.Count == 0) return;
+            DialogResult rta = MessageBox.Show("¿Estás Seguro de Borrar los registros ingresados", 
+                "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+            if (DialogResult.No == rta)
+            {
+                e.Cancel = true;
+            }
+
+        }
     }
 }
