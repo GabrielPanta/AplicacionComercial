@@ -31,12 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBuscarProducto));
             this.ProductoDataGridView = new System.Windows.Forms.DataGridView();
-            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
-            this.iDProductoToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.descripcionToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.descripcionToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.iDProductoToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -45,6 +39,10 @@
             this.rbtTermine = new System.Windows.Forms.RadioButton();
             this.rbtEmpiece = new System.Windows.Forms.RadioButton();
             this.rbtContenga = new System.Windows.Forms.RadioButton();
+            this.fillBy1ToolStrip = new System.Windows.Forms.ToolStrip();
+            this.descripcionToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.descripcionToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.BuscarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.iDProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDepartamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -59,8 +57,8 @@
             this.productoTableAdapter = new AplicacionComercial.DSAplicacionComercialTableAdapters.ProductoTableAdapter();
             this.departamentoTableAdapter = new AplicacionComercial.DSAplicacionComercialTableAdapters.DepartamentoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.ProductoDataGridView)).BeginInit();
-            this.fillByToolStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.fillBy1ToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSAplicacionComercial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
@@ -89,57 +87,10 @@
             this.ProductoDataGridView.Size = new System.Drawing.Size(801, 297);
             this.ProductoDataGridView.TabIndex = 0;
             // 
-            // fillByToolStrip
-            // 
-            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.iDProductoToolStripLabel,
-            this.iDProductoToolStripTextBox,
-            this.descripcionToolStripLabel,
-            this.descripcionToolStripTextBox,
-            this.fillByToolStripButton});
-            this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillByToolStrip.Name = "fillByToolStrip";
-            this.fillByToolStrip.Size = new System.Drawing.Size(804, 25);
-            this.fillByToolStrip.TabIndex = 1;
-            this.fillByToolStrip.Text = "fillByToolStrip";
-            // 
-            // iDProductoToolStripTextBox
-            // 
-            this.iDProductoToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.iDProductoToolStripTextBox.Name = "iDProductoToolStripTextBox";
-            this.iDProductoToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            // 
-            // descripcionToolStripLabel
-            // 
-            this.descripcionToolStripLabel.Name = "descripcionToolStripLabel";
-            this.descripcionToolStripLabel.Size = new System.Drawing.Size(72, 22);
-            this.descripcionToolStripLabel.Text = "Descripcion:";
-            // 
-            // descripcionToolStripTextBox
-            // 
-            this.descripcionToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.descripcionToolStripTextBox.Name = "descripcionToolStripTextBox";
-            this.descripcionToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            // 
-            // fillByToolStripButton
-            // 
-            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.fillByToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("fillByToolStripButton.Image")));
-            this.fillByToolStripButton.Name = "fillByToolStripButton";
-            this.fillByToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.fillByToolStripButton.Text = "FillBy";
-            this.fillByToolStripButton.Click += new System.EventHandler(this.FillByToolStripButton_Click);
-            // 
-            // iDProductoToolStripLabel
-            // 
-            this.iDProductoToolStripLabel.Name = "iDProductoToolStripLabel";
-            this.iDProductoToolStripLabel.Size = new System.Drawing.Size(70, 22);
-            this.iDProductoToolStripLabel.Text = "IDProducto:";
-            // 
             // btnAceptar
             // 
             this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAceptar.Location = new System.Drawing.Point(582, 38);
+            this.btnAceptar.Location = new System.Drawing.Point(599, 38);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(122, 31);
             this.btnAceptar.TabIndex = 9;
@@ -151,7 +102,7 @@
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(582, 75);
+            this.btnCancelar.Location = new System.Drawing.Point(599, 75);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(122, 31);
             this.btnCancelar.TabIndex = 10;
@@ -223,6 +174,39 @@
             this.rbtContenga.TabStop = true;
             this.rbtContenga.Text = "Contenga...";
             this.rbtContenga.UseVisualStyleBackColor = true;
+            // 
+            // fillBy1ToolStrip
+            // 
+            this.fillBy1ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.descripcionToolStripLabel,
+            this.descripcionToolStripTextBox,
+            this.BuscarToolStripButton});
+            this.fillBy1ToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillBy1ToolStrip.Name = "fillBy1ToolStrip";
+            this.fillBy1ToolStrip.Size = new System.Drawing.Size(821, 25);
+            this.fillBy1ToolStrip.TabIndex = 11;
+            this.fillBy1ToolStrip.Text = "fillBy1ToolStrip";
+            // 
+            // descripcionToolStripLabel
+            // 
+            this.descripcionToolStripLabel.Name = "descripcionToolStripLabel";
+            this.descripcionToolStripLabel.Size = new System.Drawing.Size(72, 22);
+            this.descripcionToolStripLabel.Text = "Descripcion:";
+            // 
+            // descripcionToolStripTextBox
+            // 
+            this.descripcionToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.descripcionToolStripTextBox.Name = "descripcionToolStripTextBox";
+            this.descripcionToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            // 
+            // BuscarToolStripButton
+            // 
+            this.BuscarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BuscarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("BuscarToolStripButton.Image")));
+            this.BuscarToolStripButton.Name = "fillBy1ToolStripButton";
+            this.BuscarToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.BuscarToolStripButton.Text = "Buscar";
+            this.BuscarToolStripButton.Click += new System.EventHandler(this.FillBy1ToolStripButton_Click);
             // 
             // iDProductoDataGridViewTextBoxColumn
             // 
@@ -312,20 +296,20 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 422);
+            this.ClientSize = new System.Drawing.Size(821, 445);
+            this.Controls.Add(this.fillBy1ToolStrip);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.fillByToolStrip);
             this.Controls.Add(this.ProductoDataGridView);
             this.Name = "FrmBuscarProducto";
             this.Text = "Buscar Producto";
             this.Load += new System.EventHandler(this.FrmBuscarProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ProductoDataGridView)).EndInit();
-            this.fillByToolStrip.ResumeLayout(false);
-            this.fillByToolStrip.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.fillBy1ToolStrip.ResumeLayout(false);
+            this.fillBy1ToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSAplicacionComercial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).EndInit();
@@ -350,12 +334,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn notasDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDMedidaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn medidaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStrip fillByToolStrip;
-        private System.Windows.Forms.ToolStripTextBox iDProductoToolStripTextBox;
-        private System.Windows.Forms.ToolStripLabel descripcionToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox descripcionToolStripTextBox;
-        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
-        private System.Windows.Forms.ToolStripLabel iDProductoToolStripLabel;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -364,5 +342,9 @@
         private System.Windows.Forms.RadioButton rbtTermine;
         private System.Windows.Forms.RadioButton rbtEmpiece;
         private System.Windows.Forms.RadioButton rbtContenga;
+        private System.Windows.Forms.ToolStrip fillBy1ToolStrip;
+        private System.Windows.Forms.ToolStripLabel descripcionToolStripLabel;
+        private System.Windows.Forms.ToolStripTextBox descripcionToolStripTextBox;
+        private System.Windows.Forms.ToolStripButton BuscarToolStripButton;
     }
 }

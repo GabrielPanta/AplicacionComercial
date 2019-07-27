@@ -66,5 +66,12 @@ namespace AplicacionComercial
             miform.Show();
             miform.MdiParent = this;
         }
+
+        private void CambiarClaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCambiarClave miForm = new FrmCambiarClave();
+            miForm.UsuarioLogueado = this.usuarioLogueado;
+            miForm.ShowDialog();
+        }
     }
 }

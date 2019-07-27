@@ -30,48 +30,48 @@ namespace AplicacionComercial
 
         }
 
-        private void FillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            string idProducto;
-            string descripcion;
-            if (rbtContenga.Checked == true)
-            {
-                idProducto = "%" + (iDProductoToolStripTextBox.Text) + "%";
-                descripcion = "%" + descripcionToolStripTextBox.Text + "%";
-            }
-            else if (rbtEmpiece.Checked == true)
-            {
+        //private void FillByToolStripButton_Click(object sender, EventArgs e)
+        //{
+        //    string idProducto;
+        //    string descripcion;
+        //    if (rbtContenga.Checked == true)
+        //    {
+        //        idProducto = "%" + (iDProductoToolStripTextBox.Text) + "%";
+        //        descripcion = "%" + descripcionToolStripTextBox.Text + "%";
+        //    }
+        //    else if (rbtEmpiece.Checked == true)
+        //    {
 
-                idProducto = iDProductoToolStripTextBox.Text + "%";
-                descripcion = descripcionToolStripTextBox.Text + "%";
-            }
-            else if (rbtTermine.Checked == true)
-            {
-                idProducto = "%" + iDProductoToolStripTextBox.Text;
-                descripcion = "%" + descripcionToolStripTextBox.Text;
+        //        idProducto = iDProductoToolStripTextBox.Text + "%";
+        //        descripcion = descripcionToolStripTextBox.Text + "%";
+        //    }
+        //    else if (rbtTermine.Checked == true)
+        //    {
+        //        idProducto = "%" + iDProductoToolStripTextBox.Text;
+        //        descripcion = "%" + descripcionToolStripTextBox.Text;
 
-            }
-            else if (rbtIgual.Checked == true)
-            {
-                idProducto = "%" + iDProductoToolStripTextBox.Text + "%";
-                descripcion = "%" + descripcionToolStripTextBox.Text + "%";
-            }
-            else
-            {
-                idProducto = iDProductoToolStripTextBox.Text;
-                descripcion = descripcionToolStripTextBox.Text;
-            }
-            try
-            {
-                this.productoTableAdapter.FillBy(this.dSAplicacionComercial.Producto, Convert.ToInt32(idProducto), descripcion);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-                System.Windows.Forms.MessageBox.Show("error");
-            }
+        //    }
+        //    else if (rbtIgual.Checked == true)
+        //    {
+        //        idProducto = "%" + iDProductoToolStripTextBox.Text + "%";
+        //        descripcion = "%" + descripcionToolStripTextBox.Text + "%";
+        //    }
+        //    else
+        //    {
+        //        idProducto = iDProductoToolStripTextBox.Text;
+        //        descripcion = descripcionToolStripTextBox.Text;
+        //    }
+        //    try
+        //    {
+        //        this.productoTableAdapter.FillBy(this.dSAplicacionComercial.Producto, Convert.ToInt32(idProducto), descripcion);
+        //    }
+        //    catch (System.Exception ex)
+        //    {
+        //        System.Windows.Forms.MessageBox.Show(ex.Message);
+        //        System.Windows.Forms.MessageBox.Show("error");
+        //    }
 
-        }
+        //}
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
@@ -94,6 +94,48 @@ namespace AplicacionComercial
         {
             idProducto = 0;
             this.Close();
+        }
+
+
+        private void FillBy1ToolStripButton_Click(object sender, EventArgs e)
+        {
+            string descripcion;
+            if (rbtContenga.Checked == true)
+            {
+
+                descripcion = "%" + descripcionToolStripTextBox.Text + "%";
+            }
+            else if (rbtEmpiece.Checked == true)
+            {
+
+                descripcion = descripcionToolStripTextBox.Text + "%";
+            }
+            else if (rbtTermine.Checked == true)
+            {
+
+                descripcion = "%" + descripcionToolStripTextBox.Text;
+
+            }
+            else if (rbtIgual.Checked == true)
+            {
+
+                descripcion = "%" + descripcionToolStripTextBox.Text + "%";
+            }
+            else
+            {
+
+                descripcion = descripcionToolStripTextBox.Text;
+            }
+
+            try
+            {
+                this.productoTableAdapter.FillBy1(this.dSAplicacionComercial.Producto, descripcion);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

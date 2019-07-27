@@ -57,5 +57,10 @@ namespace CADAplicacionComercial
             miUsuario.IDUsuario = miRegistro.IDUsuario;
             return miUsuario;
         }
+
+        public static void CambioClave(string Clave, string IDUsuario)
+        {
+            adapter.CambioClave(Clave, DateTime.Now, IDUsuario);
+        }
     }
 }

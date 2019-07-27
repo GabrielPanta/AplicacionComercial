@@ -322,6 +322,7 @@ namespace AplicacionComercial
             if (miProducto.IdProducto == 0) return;
             productoBindingSource.Position = productoBindingSource.Find("IDProducto", miProducto.IdProducto);
             CargarImagen();
+            LlenarGrillas();
         }
 
         private void AgregarBodegaButton_Click(object sender, EventArgs e)

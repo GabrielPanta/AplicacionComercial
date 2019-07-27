@@ -50,6 +50,9 @@
     <Compile Include="CADProducto.cs" />
     <Compile Include="CADUsuario.cs" />
     <Compile Include="DetalleCompra.cs" />
+    <Compile Include="DSAplicacionComercial.cs">
+      <DependentUpon>DSAplicacionComercial.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DSAplicacionComercial.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
