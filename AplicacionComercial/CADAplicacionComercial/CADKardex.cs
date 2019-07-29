@@ -51,6 +51,24 @@ namespace CADAplicacionComercial
             return (int)adapter.InsertKardex(IDBodega, IDProducto, Fecha, Documento, Entrada, 
                 Salida, Saldo, UltimoCosto, CostoPromedio);
         }
+
+        public static bool KardexTieneMovimientoByIDBodega(int IDBodega)
+        {
+            if (adapter.KardexTieneMovimientoByIDBodega(IDBodega) == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public static bool KardexTieneMovimientoByIDProducto(int IDProducto)
+        {
+            if (adapter.KardexTieneMovimientoByIDProducto(IDProducto) == null)
+            {
+                return false;
+            }
+            return true;
+        }
         
     }
 }

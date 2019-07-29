@@ -75,7 +75,7 @@
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(129, 20);
             this.txtContraseña.TabIndex = 3;
-            this.txtContraseña.Text = "123";
+            this.txtContraseña.Text = "Gaborocker\r\n";
             // 
             // btnAceptar
             // 

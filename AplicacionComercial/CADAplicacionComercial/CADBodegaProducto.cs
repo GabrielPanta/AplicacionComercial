@@ -49,6 +49,9 @@ namespace CADAplicacionComercial
             }
         }
 
-
+        public static void DeleteBodegaProductoByIDProducto(int IDProducto)
+        {
+            adapter.DeleteBodegaProductoByIDProducto(IDProducto);
+        }
     }
 }

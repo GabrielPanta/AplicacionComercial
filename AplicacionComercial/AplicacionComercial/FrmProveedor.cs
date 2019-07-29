@@ -46,5 +46,10 @@ namespace AplicacionComercial
             proveedorBindingSource.Position = proveedorBindingSource.Find("IdProveedor", miProveedor.IdProveedor);
 
         }
+
+        private void BindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

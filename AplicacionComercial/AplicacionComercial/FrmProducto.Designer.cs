@@ -234,6 +234,7 @@
             // 
             this.productoBindingSource.DataMember = "Producto";
             this.productoBindingSource.DataSource = this.dSAplicacionComercial;
+            this.productoBindingSource.PositionChanged += new System.EventHandler(this.ProductoBindingSource_PositionChanged);
             // 
             // dSAplicacionComercial
             // 

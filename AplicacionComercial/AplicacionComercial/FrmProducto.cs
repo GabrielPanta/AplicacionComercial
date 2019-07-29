@@ -47,6 +47,7 @@ namespace AplicacionComercial
 
         private void LlenarGrillas()
         {
+            if (iDProductoTextBox.Text == string.Empty) return;
             // TODO: esta línea de código carga datos en la tabla 'dSAplicacionComercial.Barra' Puede moverla o quitarla según sea necesario.
             this.barraTableAdapter.FillBy(this.dSAplicacionComercial.Barra, Convert.ToInt32(iDProductoTextBox.Text));
             this.bodegaProductoTableAdapter.FillBy(this.dSAplicacionComercial.BodegaProducto, Convert.ToInt32(iDProductoTextBox.Text));
@@ -173,11 +174,20 @@ namespace AplicacionComercial
 
         private void EliminarToolStripButton_Click(object sender, EventArgs e)
         {
-            DialogResult rspta = MessageBox.Show("¿Estas Seguro de Eliminar el Registro Actual", "Confirmacion",
+            DialogResult rspta = MessageBox.Show("¿Estas Seguro de Eliminar el Registro Actual?", "Confirmación",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
             if (rspta == DialogResult.No) return;
+
+            if (CADKardex.KardexTieneMovimientoByIDProducto(Convert.ToInt32(iDProductoTextBox.Text)))
+            {
+                MessageBox.Show("No se puede Borrar el Producto porque ya tiene Movimientos!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            CADBarra.DeleteBarraByIDProducto(Convert.ToInt32(iDProductoTextBox.Text));
+            CADBodegaProducto.DeleteBodegaProductoByIDProducto(Convert.ToInt32(iDProductoTextBox.Text));
             productoBindingSource.RemoveAt(productoBindingSource.Position);
             this.tableAdapterManager.UpdateAll(this.dSAplicacionComercial);
+            CargarImagen();LlenarGrillas();  
         }
 
         private void GuardarToolStripButton_Click(object sender, EventArgs e)
@@ -276,7 +286,7 @@ namespace AplicacionComercial
         private void BuscarImagenButton_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
-            imagenTextBox.Text = openFileDialog1.FileName;
+            imagenTextBox.Text = openFileDialog1.SafeFileName;
             CargarImagen();
         }
 
@@ -288,9 +298,13 @@ namespace AplicacionComercial
             }
             else
             {
-                if (File.Exists(imagenTextBox.Text))
+                if (File.Exists("Images\\"+imagenTextBox.Text))
                 {
-                   ImagenPictureBox.Load(imagenTextBox.Text);
+                   ImagenPictureBox.Load("Images\\" + imagenTextBox.Text);
+                }
+                else
+                {
+                    ImagenPictureBox.Image = null;
                 }
             }
         }
@@ -337,6 +351,12 @@ namespace AplicacionComercial
         private void BarraDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void ProductoBindingSource_PositionChanged(object sender, EventArgs e)
+        {
+            CargarImagen();
+            LlenarGrillas();
         }
     }
 
