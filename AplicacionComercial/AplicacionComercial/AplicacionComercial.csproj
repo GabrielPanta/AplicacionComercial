@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmBuscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarCliente.Designer.cs">
+      <DependentUpon>FrmBuscarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarUsuarios.Designer.cs">
+      <DependentUpon>FrmBuscarUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="DSAplicacionComercial.cs">
       <DependentUpon>DSAplicacionComercial.xsd</DependentUpon>
     </Compile>
@@ -77,6 +89,12 @@
     </Compile>
     <Compile Include="FrmCambiarClave.Designer.cs">
       <DependentUpon>FrmCambiarClave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClientes.Designer.cs">
+      <DependentUpon>FrmClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmCompras.cs">
       <SubType>Form</SubType>
@@ -122,6 +140,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmBuscarCliente.resx">
+      <DependentUpon>FrmBuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarUsuarios.resx">
+      <DependentUpon>FrmBuscarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBarra.resx">
       <DependentUpon>FrmBarra.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCambiarClave.resx">
       <DependentUpon>FrmCambiarClave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClientes.resx">
+      <DependentUpon>FrmClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCompras.resx">
       <DependentUpon>FrmCompras.cs</DependentUpon>

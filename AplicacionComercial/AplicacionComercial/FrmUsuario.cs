@@ -181,6 +181,19 @@ namespace AplicacionComercial
 
         private void BindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
+            DialogResult rta = MessageBox.Show("Estás seguro de eliminar el Registro?", "Confirmación", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (DialogResult.No == rta) return;
+            usuarioBindingSource.RemoveAt(usuarioBindingSource.Position);
+            this.tableAdapterManager.UpdateAll(this.dSAplicacionComercial);
+        }
+
+        private void BuscartoolStripButton_Click(object sender, EventArgs e)
+        {
+            FrmBuscarUsuarios miform =new FrmBuscarUsuarios();
+            miform.ShowDialog();
+            //if (miform.IdUsuario == 0) return;
+            usuarioBindingSource.Position = usuarioBindingSource.Find("IDUsuario", miform.IdUsuario);
 
         }
     }

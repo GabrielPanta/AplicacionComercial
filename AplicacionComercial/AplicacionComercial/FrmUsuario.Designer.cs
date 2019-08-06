@@ -330,6 +330,7 @@
             this.CancelartoolStripButton.Name = "CancelartoolStripButton";
             this.CancelartoolStripButton.Size = new System.Drawing.Size(23, 22);
             this.CancelartoolStripButton.Text = "toolStripButton2";
+            this.CancelartoolStripButton.ToolTipText = "Cancelar";
             this.CancelartoolStripButton.Click += new System.EventHandler(this.CancelartoolStripButton_Click);
             // 
             // usuarioBindingNavigatorSaveItem
@@ -360,6 +361,8 @@
             this.BuscartoolStripButton.Name = "BuscartoolStripButton";
             this.BuscartoolStripButton.Size = new System.Drawing.Size(23, 22);
             this.BuscartoolStripButton.Text = "toolStripButton1";
+            this.BuscartoolStripButton.ToolTipText = "Buscar";
+            this.BuscartoolStripButton.Click += new System.EventHandler(this.BuscartoolStripButton_Click);
             // 
             // usuarioDataGridView
             // 

@@ -73,5 +73,12 @@ namespace AplicacionComercial
             miForm.UsuarioLogueado = this.usuarioLogueado;
             miForm.ShowDialog();
         }
+
+        private void ClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmClientes miForm = new FrmClientes();
+            miForm.Show();
+            miForm.MdiParent = this;
+        }
     }
 }

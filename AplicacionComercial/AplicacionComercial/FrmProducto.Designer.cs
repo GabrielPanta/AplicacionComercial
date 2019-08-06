@@ -876,6 +876,7 @@
             this.EditarToolStripButton.Name = "EditarToolStripButton";
             this.EditarToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.EditarToolStripButton.Text = "toolStripButton1";
+            this.EditarToolStripButton.ToolTipText = "Editar";
             this.EditarToolStripButton.Click += new System.EventHandler(this.EditarToolStripButton_Click);
             // 
             // NuevoToolStripButton
@@ -907,6 +908,7 @@
             this.CancelarToolStripButton.Name = "CancelarToolStripButton";
             this.CancelarToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.CancelarToolStripButton.Text = "toolStripButton2";
+            this.CancelarToolStripButton.ToolTipText = "Cancelar";
             this.CancelarToolStripButton.Click += new System.EventHandler(this.CancelarToolStripButton_Click_1);
             // 
             // EliminarToolStripButton
@@ -927,6 +929,7 @@
             this.BuscarToolStripButton.Name = "BuscarToolStripButton";
             this.BuscarToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.BuscarToolStripButton.Text = "toolStripButton3";
+            this.BuscarToolStripButton.ToolTipText = "Buscar";
             this.BuscarToolStripButton.Click += new System.EventHandler(this.BuscarToolStripButton_Click);
             // 
             // errorProvider1

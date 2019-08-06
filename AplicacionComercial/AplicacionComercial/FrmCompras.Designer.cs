@@ -186,6 +186,7 @@
             this.ProductoTextBox.Name = "ProductoTextBox";
             this.ProductoTextBox.Size = new System.Drawing.Size(160, 20);
             this.ProductoTextBox.TabIndex = 7;
+            this.ProductoTextBox.TextChanged += new System.EventHandler(this.ProductoTextBox_TextChanged);
             this.ProductoTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.ProductoTextBox_Validating);
             // 
             // BuscarProveedorButton

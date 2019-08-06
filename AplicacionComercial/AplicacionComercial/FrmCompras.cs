@@ -89,15 +89,17 @@ namespace AplicacionComercial
             {
                 ProductoLabel.Text = miProducto.Descripcion;
                 ultimoProducto = miProducto;
-                if (!File.Exists(miProducto.Imagen))
+                if (File.Exists("Images\\" + miProducto.Imagen))
                 {
-                    ProductoPictureBox.Image = null;
+                    ProductoPictureBox.Load("Images\\" + miProducto.Imagen);
                 }
                 else
                 {
-                    ProductoPictureBox.Load(miProducto.Imagen);
+                   ProductoPictureBox.Image = null;
                 }
+
             }
+
         }
 
         private void AñadirButton_Click(object sender, EventArgs e)
@@ -366,6 +368,7 @@ namespace AplicacionComercial
             misDetalles.Clear();
             RefrescarGrid();
             ProveedorComboBox.Focus();
+
         }
 
         private void BorrarTodoButton_Click(object sender, EventArgs e)
@@ -398,6 +401,11 @@ namespace AplicacionComercial
             {
                 e.Cancel = true;
             }
+
+        }
+
+        private void ProductoTextBox_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
