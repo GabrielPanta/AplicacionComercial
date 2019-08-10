@@ -343,18 +343,20 @@ namespace AplicacionComercial
                 if (miKardex == null)
                 {
                     nuevoSaldo = miDetalle.Cantidad;
-                    nuevoCostoPromedio = miDetalle.Costo;
+                    nuevoCostoPromedio = miDetalle.ValorNeto/(decimal)miDetalle.Cantidad;
                 }
                 else
                 {
                     nuevoSaldo = miKardex.Saldo + miDetalle.Cantidad;
                     nuevoCostoPromedio =
-                   (miKardex.CostoPromedio * (decimal)miKardex.Saldo + miDetalle.Costo * (decimal)miDetalle.Cantidad) / (decimal)nuevoSaldo;
+                   (miKardex.CostoPromedio * (decimal)miKardex.Saldo +
+                   miDetalle.ValorNeto) /
+                   (decimal)nuevoSaldo;
                 }
 
                 IDKardex = CADKardex.InsertKardex(IDBodega, miDetalle.IDProducto, Fecha,
                         string.Format("CO-{0}", IDCompra), miDetalle.Cantidad, 0, nuevoSaldo,
-                        miDetalle.Costo, nuevoCostoPromedio);
+                        miDetalle.ValorNeto/(decimal)miDetalle.Cantidad, nuevoCostoPromedio);
 
                 //Actulaizamos CompraDetalle
                 CADCompraDetalle.InsertCompraDetalle(IDCompra, miDetalle.IDProducto, miDetalle.Descripcion, miDetalle.Costo,

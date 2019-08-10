@@ -8,10 +8,10 @@
         public float Cantidad { get; set; }
         public float PorcentajeIVA { get; set; }
         public float PorcentajeDescuento { get; set; }
-        public decimal ValorBruto { get { return Costo * (decimal)Cantidad; } }
-        public decimal ValorIVA { get {return ValorBruto*(decimal)PorcentajeIVA; } }
+        public decimal ValorBruto { get { return Costo * (decimal)Cantidad/(1+(decimal)PorcentajeIVA); } }
+        public decimal ValorIVA { get {return Costo*(decimal)Cantidad-ValorBruto; } }
         public decimal ValorDescuento { get { return ValorBruto * (decimal)PorcentajeDescuento; } }
-        public decimal ValorNeto { get { return ValorBruto +ValorIVA-ValorDescuento; } }
+        public decimal ValorNeto { get { return Costo*(decimal)Cantidad -ValorDescuento; } }
     }
 }
  
